@@ -1,0 +1,398 @@
+{
+  "schema_version": "0.1",
+  "page_id": "610245_p0090",
+  "otzar_id": "610245",
+  "image": "harmonized/output/otzar_layout_model/annotation_sources/610245/610245_p0090_mediabox.png",
+  "width": 1241,
+  "height": 1754,
+  "source_pdf_page_1based": 90,
+  "source_pdf_sha256": "5d81e15b36a38d29f740ccb1bc5ecb25c690753345704f28ec8499bbaed90f54",
+  "work_ids": [
+    "W03863"
+  ],
+  "annotation_status": "agent_draft",
+  "reviewer": "annotate_structure/source-v10",
+  "date_evidence": {
+    "status": "visually_verified",
+    "text_he": "בשנת תרי״ט",
+    "region_id": "r1",
+    "basis": "Visible year in historical body paragraph, followed by a weekday/weekly-portion phrase. Date is embedded in prose; no Gregorian conversion."
+  },
+  "layout_notes": [
+    "Historical Shoel uMeshiv body with displayed editorial topic headings and smaller numbered reference notes. Modern editorial headings/notes are not responsum body.",
+    "No model predictions used. Physical paragraph boundaries, compact type and short headings are traced from the source."
+  ],
+  "containers": [
+    {
+      "id": "body",
+      "kind": "zone",
+      "bbox": [
+        80,
+        120,
+        919,
+        815
+      ],
+      "parent_id": null
+    },
+    {
+      "id": "bodyr",
+      "kind": "column",
+      "bbox": [
+        512,
+        120,
+        919,
+        815
+      ],
+      "parent_id": "body"
+    },
+    {
+      "id": "bodyl",
+      "kind": "column",
+      "bbox": [
+        80,
+        120,
+        486,
+        815
+      ],
+      "parent_id": "body"
+    },
+    {
+      "id": "notes",
+      "kind": "zone",
+      "bbox": [
+        80,
+        831,
+        919,
+        927
+      ],
+      "parent_id": null
+    },
+    {
+      "id": "notesr",
+      "kind": "column",
+      "bbox": [
+        512,
+        831,
+        919,
+        927
+      ],
+      "parent_id": "notes"
+    },
+    {
+      "id": "notesl",
+      "kind": "column",
+      "bbox": [
+        80,
+        831,
+        486,
+        927
+      ],
+      "parent_id": "notes"
+    }
+  ],
+  "regions": [
+    {
+      "id": "h0",
+      "role": "running_header",
+      "bbox": [
+        678,
+        76,
+        754,
+        103
+      ],
+      "container_id": null,
+      "stream_id": "header",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "h1",
+      "role": "running_header",
+      "bbox": [
+        407,
+        88,
+        591,
+        103
+      ],
+      "container_id": null,
+      "stream_id": "header",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "h2",
+      "role": "running_header",
+      "bbox": [
+        244,
+        81,
+        325,
+        103
+      ],
+      "container_id": null,
+      "stream_id": "header",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "h3",
+      "role": "page_number",
+      "bbox": [
+        880,
+        86,
+        918,
+        103
+      ],
+      "container_id": null,
+      "stream_id": "page_number",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "t0",
+      "role": "title",
+      "bbox": [
+        534,
+        121,
+        899,
+        147
+      ],
+      "container_id": "bodyr",
+      "stream_id": "main",
+      "text_hint": "אם מלך ורבים חשובים מוחזקים...",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "r0",
+      "role": "main_text",
+      "bbox": [
+        512,
+        149,
+        919,
+        456
+      ],
+      "container_id": "bodyr",
+      "stream_id": "main",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "t1",
+      "role": "title",
+      "bbox": [
+        565,
+        474,
+        864,
+        489
+      ],
+      "container_id": "bodyr",
+      "stream_id": "main",
+      "text_hint": "עוד בענין הדר בחו״ל...",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "r1",
+      "role": "main_text",
+      "bbox": [
+        512,
+        491,
+        919,
+        626
+      ],
+      "container_id": "bodyr",
+      "stream_id": "main",
+      "text_hint": "והנה בשנת תרי״ט...",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "r2",
+      "role": "main_text",
+      "bbox": [
+        512,
+        642,
+        919,
+        813
+      ],
+      "container_id": "bodyr",
+      "stream_id": "main",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "l0",
+      "role": "main_text",
+      "bbox": [
+        80,
+        122,
+        486,
+        154
+      ],
+      "container_id": "bodyl",
+      "stream_id": "main",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "t2",
+      "role": "title",
+      "bbox": [
+        102,
+        163,
+        464,
+        190
+      ],
+      "container_id": "bodyl",
+      "stream_id": "main",
+      "text_hint": "אם קנין פירות חשוב כיש לו קרקע...",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "l1",
+      "role": "main_text",
+      "bbox": [
+        80,
+        193,
+        486,
+        601
+      ],
+      "container_id": "bodyl",
+      "stream_id": "main",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "l2",
+      "role": "main_text",
+      "bbox": [
+        80,
+        608,
+        486,
+        813
+      ],
+      "container_id": "bodyl",
+      "stream_id": "main",
+      "text_hint": "",
+      "confidence": "high",
+      "basis": "Visible physical block and whitespace boundaries inspected in full source."
+    },
+    {
+      "id": "nr",
+      "role": "footnote",
+      "bbox": [
+        512,
+        831,
+        919,
+        927
+      ],
+      "container_id": "notesr",
+      "stream_id": "references",
+      "text_hint": "Continued note, then numbered notes 8 and 9",
+      "confidence": "high",
+      "basis": "Small localized numbered references with matching superscript callouts in body; ordinary editorial notes, not separately authored commentary."
+    },
+    {
+      "id": "nl",
+      "role": "footnote",
+      "bbox": [
+        80,
+        831,
+        486,
+        927
+      ],
+      "container_id": "notesl",
+      "stream_id": "references",
+      "text_hint": "Continuation then numbered note 10",
+      "confidence": "high",
+      "basis": "Small localized numbered references with matching superscript callouts in body; ordinary editorial notes, not separately authored commentary."
+    }
+  ],
+  "relations": [
+    {
+      "type": "heads",
+      "from": "t0",
+      "to": "r0",
+      "basis": "Visually separated heading introduces the following block in its stream."
+    },
+    {
+      "type": "heads",
+      "from": "t1",
+      "to": "r1",
+      "basis": "Visually separated heading introduces the following block in its stream."
+    },
+    {
+      "type": "heads",
+      "from": "t2",
+      "to": "l1",
+      "basis": "Visually separated heading introduces the following block in its stream."
+    },
+    {
+      "type": "continues",
+      "from": "r2",
+      "to": "l0",
+      "basis": "Right bottom ends שכיחי; left top continues מתיבתא ועולי רגלים, a direct column continuation."
+    },
+    {
+      "type": "continues",
+      "from": "nr",
+      "to": "nl",
+      "basis": "The note9 discussion continues into the unnumbered opening of the left footer before note10. Mixed note blocks are kept physical, not split at inline numbers."
+    },
+    {
+      "type": "annotates",
+      "from": "nr",
+      "to": "l1",
+      "basis": "Visible superscript8 in l1 matches numbered note8 in right footer."
+    },
+    {
+      "type": "annotates",
+      "from": "nr",
+      "to": "l2",
+      "basis": "Visible superscript9 in l2 matches numbered note9 in right footer."
+    },
+    {
+      "type": "annotates",
+      "from": "nl",
+      "to": "l2",
+      "basis": "Visible superscript10 in l2 matches numbered note10 in left footer."
+    }
+  ],
+  "reading_order": {
+    "header": [
+      "h0",
+      "h1",
+      "h2"
+    ],
+    "page_number": [
+      "h3"
+    ],
+    "main": [
+      "t0",
+      "r0",
+      "t1",
+      "r1",
+      "r2",
+      "l0",
+      "t2",
+      "l1",
+      "l2"
+    ],
+    "references": [
+      "nr",
+      "nl"
+    ]
+  },
+  "uncertainties": [
+    "Right footer begins a continuation from an earlier page. No external edge fabricated. Named cited authorities in reference notes do not make these notes an authored commentary stream."
+  ]
+}

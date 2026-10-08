@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shprintsin/sectioner/schema/worksets.schema.json",
+  "title": "Sectioner worksets.json",
+  "type": "object",
+  "required": [
+    "worksets"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "worksets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "root",
+          "files"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+          },
+          "kind": {
+            "enum": [
+              "book",
+              "newspaper",
+              "text"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "root": {
+            "type": "string",
+            "description": "relative to $SECTIONER_ROOT (default: the data folder), or absolute"
+          },
+          "files": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "image": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "layout": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "proposal": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "ocr": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "existing": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "text": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              },
+              "corpus": {
+                "type": "string",
+                "description": "a path relative to root; {id} is the page or document id"
+              }
+            }
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+                },
+                "dir": {
+                  "type": "string"
+                },
+                "files": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "layout": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "proposal": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "ocr": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "existing": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    },
+                    "corpus": {
+                      "type": "string",
+                      "description": "a path relative to root; {id} is the page or document id"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "output": {
+                  "type": "string"
+                },
+                "sessionWorkset": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "discover": {
+            "enum": [
+              "image",
+              "layout",
+              "text"
+            ]
+          },
+          "output": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "roles": {
+            "type": "array",
+            "description": "legacy (book): use a project's tags instead"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "book"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "files": {
+                  "required": [
+                    "image"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "newspaper"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "files": {
+                  "required": [
+                    "image",
+                    "layout"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "files": {
+                  "oneOf": [
+                    {
+                      "required": [
+                        "text"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "corpus"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

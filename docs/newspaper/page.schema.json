@@ -1,0 +1,468 @@
+{
+  "$defs": {
+    "BBox": {
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "integer"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "integer"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "integer"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "Block": {
+      "properties": {
+        "block_id": {
+          "title": "Block Id",
+          "type": "integer"
+        },
+        "role": {
+          "$ref": "#/$defs/BlockRole"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "line_bboxes": {
+          "items": {
+            "$ref": "#/$defs/BBox"
+          },
+          "title": "Line Bboxes",
+          "type": "array"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang",
+          "default": "unknown"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section Id"
+        },
+        "source": {
+          "default": "layout",
+          "description": "'layout' straight from the layout model, 'op' produced by a repair operation, 'added' introduced to cover missed content.",
+          "title": "Source",
+          "type": "string"
+        },
+        "ocr_conf": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ocr Conf"
+        }
+      },
+      "required": [
+        "block_id",
+        "role",
+        "bbox"
+      ],
+      "title": "Block",
+      "type": "object"
+    },
+    "BlockRole": {
+      "description": "What a single layout block does inside its section.",
+      "enum": [
+        "masthead",
+        "running_head",
+        "dateline_bar",
+        "headline",
+        "subhead",
+        "kicker",
+        "byline",
+        "run_in_dateline",
+        "body",
+        "caption",
+        "illustration",
+        "ad_frame",
+        "ad_headline",
+        "ad_body",
+        "table",
+        "toc_list",
+        "drop_capital",
+        "separator",
+        "imprint",
+        "noise"
+      ],
+      "title": "BlockRole",
+      "type": "string"
+    },
+    "Lang": {
+      "enum": [
+        "yid",
+        "heb",
+        "rus",
+        "pol",
+        "deu",
+        "eng",
+        "lat",
+        "mixed",
+        "unknown"
+      ],
+      "title": "Lang",
+      "type": "string"
+    },
+    "Provenance": {
+      "properties": {
+        "route": {
+          "description": "Which pipeline produced this, e.g. 'gt', 'r3'.",
+          "title": "Route",
+          "type": "string"
+        },
+        "layout_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layout Model"
+        },
+        "ocr_engine": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ocr Engine"
+        },
+        "llm_provider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Llm Provider"
+        },
+        "llm_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Llm Model"
+        },
+        "thinking_level": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Thinking Level"
+        },
+        "input_tokens": {
+          "default": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "default": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "thought_tokens": {
+          "default": 0,
+          "title": "Thought Tokens",
+          "type": "integer"
+        },
+        "cost_usd": {
+          "default": 0.0,
+          "title": "Cost Usd",
+          "type": "number"
+        },
+        "cache_hit": {
+          "default": false,
+          "title": "Cache Hit",
+          "type": "boolean"
+        },
+        "seconds": {
+          "default": 0.0,
+          "title": "Seconds",
+          "type": "number"
+        },
+        "ops_applied": {
+          "default": 0,
+          "title": "Ops Applied",
+          "type": "integer"
+        },
+        "created_utc": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created Utc"
+        },
+        "reviewed_by_human": {
+          "default": false,
+          "title": "Reviewed By Human",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "route"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Section": {
+      "description": "The product. An article or advertisement as one object.",
+      "properties": {
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/SectionType"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "subtitle": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subtitle"
+        },
+        "body_text": {
+          "default": "",
+          "description": "Member block text joined in reading order.",
+          "title": "Body Text",
+          "type": "string"
+        },
+        "block_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Block Ids",
+          "type": "array"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BBox"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Union of member blocks. A multi-column article is not rectangular, so this is an envelope -- block_bboxes holds the true footprint."
+        },
+        "block_bboxes": {
+          "items": {
+            "$ref": "#/$defs/BBox"
+          },
+          "title": "Block Bboxes",
+          "type": "array"
+        },
+        "column_span": {
+          "default": 1,
+          "title": "Column Span",
+          "type": "integer"
+        },
+        "continues_from_previous_page": {
+          "default": false,
+          "title": "Continues From Previous Page",
+          "type": "boolean"
+        },
+        "continues_to_next_page": {
+          "default": false,
+          "title": "Continues To Next Page",
+          "type": "boolean"
+        },
+        "lang": {
+          "$ref": "#/$defs/Lang",
+          "default": "unknown"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "required": [
+        "section_id",
+        "type"
+      ],
+      "title": "Section",
+      "type": "object"
+    },
+    "SectionType": {
+      "description": "What a section *is*. Separating ADVERTISEMENT from ARTICLE is a primary goal.",
+      "enum": [
+        "ARTICLE",
+        "ADVERTISEMENT",
+        "ILLUSTRATION",
+        "SECTION",
+        "MASTHEAD",
+        "RUNNING_HEAD",
+        "TABLE_OF_CONTENTS",
+        "IMPRINT",
+        "NOISE"
+      ],
+      "title": "SectionType",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "page_id": {
+      "title": "Page Id",
+      "type": "string"
+    },
+    "source_image": {
+      "title": "Source Image",
+      "type": "string"
+    },
+    "width": {
+      "title": "Width",
+      "type": "integer"
+    },
+    "height": {
+      "title": "Height",
+      "type": "integer"
+    },
+    "reading_direction": {
+      "default": "rtl",
+      "title": "Reading Direction",
+      "type": "string"
+    },
+    "n_columns": {
+      "default": 1,
+      "title": "N Columns",
+      "type": "integer"
+    },
+    "column_bounds": {
+      "description": "x positions of the column rules, derived from the layout model's vertical separators. Left to right regardless of reading direction.",
+      "items": {
+        "type": "integer"
+      },
+      "title": "Column Bounds",
+      "type": "array"
+    },
+    "languages": {
+      "items": {
+        "$ref": "#/$defs/Lang"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/Section"
+      },
+      "title": "Sections",
+      "type": "array"
+    },
+    "blocks": {
+      "items": {
+        "$ref": "#/$defs/Block"
+      },
+      "title": "Blocks",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "page_id",
+    "source_image",
+    "width",
+    "height"
+  ],
+  "title": "Page",
+  "type": "object"
+}

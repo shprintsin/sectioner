@@ -1,0 +1,895 @@
+{
+  "page_id": "152229_p0053",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/152229/152229_p0053.png",
+    "sha256": "f400d42823559a2056e638f65b4197085196e33d8e4a7ccf9663ded7967a7dfa",
+    "kind": "image"
+  },
+  "review_flags": [
+    "near_identical_same_role_proposals_removed"
+  ],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/152229/152229_p0053.png",
+  "image_sha256": "f400d42823559a2056e638f65b4197085196e33d8e4a7ccf9663ded7967a7dfa",
+  "width": 3125,
+  "height": 4286,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/152229_p0053.png",
+  "render_image_sha256": "c6906b3142a99e004264c344fd47db8cc634b4ebe66f06af88e662659e7f285c",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 2.1496,
+  "regions": [
+    {
+      "id": "r0007",
+      "role": "running_header",
+      "confidence": 0.972815,
+      "bbox": [
+        201.30027,
+        0.26921,
+        251.18375,
+        28.74349
+      ],
+      "bbox_pixels": [
+        629.063,
+        1.154,
+        784.949,
+        123.195
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.972815,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0011",
+      "role": "page_number",
+      "confidence": 0.580115,
+      "bbox": [
+        970.67578,
+        1.16935,
+        1000.0,
+        26.35277
+      ],
+      "bbox_pixels": [
+        3033.362,
+        5.012,
+        3125.0,
+        112.948
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": null,
+      "stream_id": "page_number",
+      "detector_role": "page_number",
+      "detector_confidence": 0.580115,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.988525,
+      "bbox": [
+        722.19977,
+        1.34732,
+        797.49437,
+        28.03382
+      ],
+      "bbox_pixels": [
+        2256.874,
+        5.775,
+        2492.17,
+        120.153
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.988525,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0004",
+      "role": "running_header",
+      "confidence": 0.984079,
+      "bbox": [
+        463.17137,
+        7.56512,
+        538.04945,
+        28.90879
+      ],
+      "bbox_pixels": [
+        1447.411,
+        32.424,
+        1681.405,
+        123.903
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.984079,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.876395,
+      "bbox": [
+        0.0,
+        46.35938,
+        485.78945,
+        909.50289
+      ],
+      "bbox_pixels": [
+        0.0,
+        198.696,
+        1518.092,
+        3898.129
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.876395,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0005",
+      "role": "main_text",
+      "confidence": 0.98193,
+      "bbox": [
+        512.7982,
+        54.10286,
+        1000.0,
+        599.67876
+      ],
+      "bbox_pixels": [
+        1602.494,
+        231.885,
+        3125.0,
+        2570.223
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.98193,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0015",
+      "role": "main_text",
+      "confidence": 0.280056,
+      "bbox": [
+        0.0,
+        65.86358,
+        458.28703,
+        910.62237
+      ],
+      "bbox_pixels": [
+        0.0,
+        282.291,
+        1432.147,
+        3902.927
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.280056,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0010",
+      "role": "main_text",
+      "confidence": 0.856583,
+      "bbox": [
+        513.73227,
+        620.56451,
+        1000.0,
+        714.90647
+      ],
+      "bbox_pixels": [
+        1605.413,
+        2659.74,
+        3125.0,
+        3064.089
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.856583,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0006",
+      "role": "main_text",
+      "confidence": 0.977394,
+      "bbox": [
+        514.48094,
+        732.42387,
+        1000.0,
+        907.21301
+      ],
+      "bbox_pixels": [
+        1607.753,
+        3139.169,
+        3125.0,
+        3888.315
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.977394,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0012",
+      "role": "auxiliary_text",
+      "confidence": 0.459189,
+      "bbox": [
+        844.46773,
+        937.17429,
+        1000.0,
+        954.35977
+      ],
+      "bbox_pixels": [
+        2638.962,
+        4016.729,
+        3125.0,
+        4090.386
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.459189,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0002",
+      "role": "auxiliary_text",
+      "confidence": 0.989054,
+      "bbox": [
+        269.08973,
+        938.96724,
+        484.29543,
+        954.77736
+      ],
+      "bbox_pixels": [
+        840.905,
+        4024.414,
+        1513.423,
+        4092.176
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.989054,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0014",
+      "role": "auxiliary_text",
+      "confidence": 0.368719,
+      "bbox": [
+        849.71148,
+        960.60313,
+        1000.0,
+        977.47504
+      ],
+      "bbox_pixels": [
+        2655.348,
+        4117.145,
+        3125.0,
+        4189.458
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.368719,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0009",
+      "role": "auxiliary_text",
+      "confidence": 0.874216,
+      "bbox": [
+        368.26301,
+        962.40918,
+        484.30887,
+        978.78289
+      ],
+      "bbox_pixels": [
+        1150.822,
+        4124.886,
+        1513.465,
+        4195.063
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.874216,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0016",
+      "role": "auxiliary_text",
+      "confidence": 0.26485,
+      "bbox": [
+        850.15203,
+        983.02966,
+        1000.0,
+        999.95625
+      ],
+      "bbox_pixels": [
+        2656.725,
+        4213.265,
+        3125.0,
+        4285.812
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.26485,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    },
+    {
+      "id": "r0001",
+      "role": "auxiliary_text",
+      "confidence": 0.989441,
+      "bbox": [
+        181.3175,
+        983.36289,
+        485.95828,
+        999.757
+      ],
+      "bbox_pixels": [
+        566.617,
+        4214.693,
+        1518.62,
+        4284.958
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.989441,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Remove duplicate boxes; separate body from auxiliary text."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "footnote",
+      "confidence": 0.989441,
+      "bbox": [
+        181.3175,
+        983.36289,
+        485.95828,
+        999.757
+      ],
+      "bbox_pixels": [
+        566.617,
+        4214.693,
+        1518.62,
+        4284.958
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "footnote",
+      "confidence": 0.989054,
+      "bbox": [
+        269.08973,
+        938.96724,
+        484.29543,
+        954.77736
+      ],
+      "bbox_pixels": [
+        840.905,
+        4024.414,
+        1513.423,
+        4092.176
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.988525,
+      "bbox": [
+        722.19977,
+        1.34732,
+        797.49437,
+        28.03382
+      ],
+      "bbox_pixels": [
+        2256.874,
+        5.775,
+        2492.17,
+        120.153
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "running_header",
+      "confidence": 0.984079,
+      "bbox": [
+        463.17137,
+        7.56512,
+        538.04945,
+        28.90879
+      ],
+      "bbox_pixels": [
+        1447.411,
+        32.424,
+        1681.405,
+        123.903
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0005",
+      "role": "main_text",
+      "confidence": 0.98193,
+      "bbox": [
+        512.7982,
+        54.10286,
+        1000.0,
+        599.67876
+      ],
+      "bbox_pixels": [
+        1602.494,
+        231.885,
+        3125.0,
+        2570.223
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0006",
+      "role": "main_text",
+      "confidence": 0.977394,
+      "bbox": [
+        514.48094,
+        732.42387,
+        1000.0,
+        907.21301
+      ],
+      "bbox_pixels": [
+        1607.753,
+        3139.169,
+        3125.0,
+        3888.315
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0007",
+      "role": "running_header",
+      "confidence": 0.972815,
+      "bbox": [
+        201.30027,
+        0.26921,
+        251.18375,
+        28.74349
+      ],
+      "bbox_pixels": [
+        629.063,
+        1.154,
+        784.949,
+        123.195
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.876395,
+      "bbox": [
+        0.0,
+        46.35938,
+        485.78945,
+        909.50289
+      ],
+      "bbox_pixels": [
+        0.0,
+        198.696,
+        1518.092,
+        3898.129
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0009",
+      "role": "footnote",
+      "confidence": 0.874216,
+      "bbox": [
+        368.26301,
+        962.40918,
+        484.30887,
+        978.78289
+      ],
+      "bbox_pixels": [
+        1150.822,
+        4124.886,
+        1513.465,
+        4195.063
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0010",
+      "role": "main_text",
+      "confidence": 0.856583,
+      "bbox": [
+        513.73227,
+        620.56451,
+        1000.0,
+        714.90647
+      ],
+      "bbox_pixels": [
+        1605.413,
+        2659.74,
+        3125.0,
+        3064.089
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0011",
+      "role": "page_number",
+      "confidence": 0.580115,
+      "bbox": [
+        970.67578,
+        1.16935,
+        1000.0,
+        26.35277
+      ],
+      "bbox_pixels": [
+        3033.362,
+        5.012,
+        3125.0,
+        112.948
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0012",
+      "role": "footnote",
+      "confidence": 0.459189,
+      "bbox": [
+        844.46773,
+        937.17429,
+        1000.0,
+        954.35977
+      ],
+      "bbox_pixels": [
+        2638.962,
+        4016.729,
+        3125.0,
+        4090.386
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0013",
+      "role": "footnote",
+      "confidence": 0.398905,
+      "bbox": [
+        180.27471,
+        983.26993,
+        487.03563,
+        1000.0
+      ],
+      "bbox_pixels": [
+        563.358,
+        4214.295,
+        1521.986,
+        4286.0
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0014",
+      "role": "footnote",
+      "confidence": 0.368719,
+      "bbox": [
+        849.71148,
+        960.60313,
+        1000.0,
+        977.47504
+      ],
+      "bbox_pixels": [
+        2655.348,
+        4117.145,
+        3125.0,
+        4189.458
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0015",
+      "role": "main_text",
+      "confidence": 0.280056,
+      "bbox": [
+        0.0,
+        65.86358,
+        458.28703,
+        910.62237
+      ],
+      "bbox_pixels": [
+        0.0,
+        282.291,
+        1432.147,
+        3902.927
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0016",
+      "role": "footnote",
+      "confidence": 0.26485,
+      "bbox": [
+        850.15203,
+        983.02966,
+        1000.0,
+        999.95625
+      ],
+      "bbox_pixels": [
+        2656.725,
+        4213.265,
+        3125.0,
+        4285.812
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "d736a8a439fcfcabc92fee0dce2a5a1a5bc506b348de3b2bb493b3c979949d4a",
+    "input_count": 16,
+    "retained_count": 15,
+    "removed_ids": [
+      "r0013"
+    ],
+    "decisions": [
+      {
+        "removed_id": "r0013",
+        "retained_id": "r0001",
+        "role": "footnote",
+        "iou": 0.9731462058929382,
+        "removed_confidence": 0.398905,
+        "retained_confidence": 0.989441,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      }
+    ],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "requires_review": true,
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "footnotes_z001",
+      "kind": "zone",
+      "bbox": [
+        181.3175,
+        937.17429,
+        1000.0,
+        999.95625
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        566.617,
+        4016.729,
+        3125.0,
+        4285.812
+      ]
+    },
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        0.0,
+        46.35938,
+        1000.0,
+        910.62237
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        0.0,
+        198.696,
+        3125.0,
+        3902.927
+      ]
+    },
+    {
+      "id": "main_z001_right",
+      "kind": "column",
+      "bbox": [
+        512.7982,
+        54.10286,
+        1000.0,
+        907.21301
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        1602.494,
+        231.885,
+        3125.0,
+        3888.315
+      ]
+    },
+    {
+      "id": "main_z001_left",
+      "kind": "column",
+      "bbox": [
+        0.0,
+        46.35938,
+        485.78945,
+        910.62237
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        0.0,
+        198.696,
+        1518.092,
+        3902.927
+      ]
+    }
+  ],
+  "reading_order": {
+    "auxiliary": [
+      "r0012",
+      "r0002",
+      "r0014",
+      "r0009",
+      "r0016",
+      "r0001"
+    ],
+    "header": [
+      "r0003",
+      "r0004",
+      "r0007"
+    ],
+    "main": [
+      "r0005",
+      "r0010",
+      "r0006",
+      "r0008",
+      "r0015"
+    ],
+    "page_number": [
+      "r0011"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "source_pdf_page_1based": 53,
+  "otzar_id": "152229",
+  "work_ids": [
+    "W02535"
+  ],
+  "source_pdf_sha256": "e091ceeef56d98f03f300ef700755868c9ff171286d5214a052a30ca2bb84a76",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/predictions.json",
+    "proposal_sha256": "20aadb40242676d2037b8d7e26b18b91c65d68e667767150c1c47291b6c8522e",
+    "original_allocation": "setup",
+    "purpose": "Remove duplicate boxes; separate body from auxiliary text."
+  }
+}

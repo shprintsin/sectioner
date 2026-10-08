@@ -1,0 +1,1001 @@
+{
+  "page_id": "646759_p0094",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/646759/646759_p0094.png",
+    "sha256": "8ea5b365fe607b58a9aa8f244a19747dd7afa7066c9c6658ee152054b9b7d288",
+    "kind": "image"
+  },
+  "review_flags": [
+    "near_identical_same_role_proposals_removed"
+  ],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/646759/646759_p0094.png",
+  "image_sha256": "8ea5b365fe607b58a9aa8f244a19747dd7afa7066c9c6658ee152054b9b7d288",
+  "width": 2229,
+  "height": 3421,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/646759_p0094.png",
+  "render_image_sha256": "ae76c8bfc2f0f55745da5e22751ff6147c05e3045bae5ea35255beedcb3a8cf9",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 1.8044,
+  "regions": [
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.868767,
+      "bbox": [
+        330.56679,
+        0.44469,
+        671.17423,
+        30.42402
+      ],
+      "bbox_pixels": [
+        736.833,
+        1.521,
+        1496.047,
+        104.081
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.005859375,
+        "main_text": 0.00234375,
+        "page_number": 0.01875,
+        "running_header": 0.9294270833333333,
+        "separator": 0.001953125,
+        "title": 0.041666666666666664
+      },
+      "semantic_confidence": 0.9294270833333333,
+      "stream_id": "header",
+      "detector_role": "title",
+      "detector_confidence": 0.868767,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0005",
+      "role": "title",
+      "confidence": 0.672874,
+      "bbox": [
+        464.83855,
+        61.77826,
+        542.04148,
+        81.9954
+      ],
+      "bbox_pixels": [
+        1036.125,
+        211.343,
+        1208.21,
+        280.506
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z001",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.12667410714285712,
+        "main_text": 0.09913504464285713,
+        "page_number": 0.1545014880952381,
+        "running_header": 0.08463541666666666,
+        "separator": 0.0107421875,
+        "title": 0.5243117559523809
+      },
+      "semantic_confidence": 0.5243117559523809,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.672874,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "ink_recovery_0001",
+      "role": "main_text",
+      "bbox": [
+        8.524,
+        81.5551,
+        995.06505,
+        342.58989
+      ],
+      "bbox_pixels": [
+        19.0,
+        279.0,
+        2218.0,
+        1172.0
+      ],
+      "confidence": 0.77,
+      "source": "ink_geometry",
+      "provenance": {
+        "method": "row_bands",
+        "mode": "one_column",
+        "ink_pixels": 231879,
+        "line_bands": 8
+      },
+      "evidence": {
+        "label_status": "unknown",
+        "pixels_are_evidence_not_truth": true
+      },
+      "detector_role_before_calibration": "unknown",
+      "semantic_votes": {
+        "footnote": 0.08348214285714284,
+        "main_text": 0.8740699404761905,
+        "page_number": 0.005729166666666667,
+        "running_header": 0.02734375,
+        "separator": 0.0078125,
+        "title": 0.0015625
+      },
+      "semantic_confidence": 0.8740699404761905,
+      "container_id": "main_z002_single",
+      "stream_id": "main",
+      "detector_role": "unknown",
+      "detector_confidence": 0.77,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0012",
+      "role": "title",
+      "confidence": 0.293555,
+      "bbox": [
+        455.98095,
+        385.13983,
+        547.21931,
+        405.53999
+      ],
+      "bbox_pixels": [
+        1016.382,
+        1317.563,
+        1219.752,
+        1387.352
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z003",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.16096540178571428,
+        "main_text": 0.07179129464285715,
+        "page_number": 0.13958333333333336,
+        "running_header": 0.02578125,
+        "separator": 0.021484375,
+        "title": 0.5803943452380952
+      },
+      "semantic_confidence": 0.5803943452380952,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.293555,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0007",
+      "role": "title",
+      "confidence": 0.426822,
+      "bbox": [
+        376.739,
+        415.25815,
+        619.82151,
+        436.49243
+      ],
+      "bbox_pixels": [
+        839.751,
+        1420.598,
+        1381.582,
+        1493.241
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z004",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.1556361607142857,
+        "main_text": 0.09496837797619047,
+        "page_number": 0.17330729166666664,
+        "running_header": 0.04401041666666666,
+        "separator": 0.005859375,
+        "title": 0.5262183779761906
+      },
+      "semantic_confidence": 0.5262183779761906,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.426822,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0006",
+      "role": "title",
+      "confidence": 0.518516,
+      "bbox": [
+        377.53125,
+        415.30647,
+        623.7897,
+        435.446
+      ],
+      "bbox_pixels": [
+        841.517,
+        1420.763,
+        1390.427,
+        1489.661
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z005",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.1384765625,
+        "main_text": 0.08403087797619048,
+        "page_number": 0.1537109375,
+        "running_header": 0.037760416666666664,
+        "separator": 0.005859375,
+        "title": 0.5801618303571429
+      },
+      "semantic_confidence": 0.5801618303571429,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.518516,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "ink_recovery_0002",
+      "role": "main_text",
+      "bbox": [
+        6.72948,
+        478.80737,
+        993.71916,
+        873.72113
+      ],
+      "bbox_pixels": [
+        15.0,
+        1638.0,
+        2215.0,
+        2989.0
+      ],
+      "confidence": 0.77,
+      "source": "ink_geometry",
+      "provenance": {
+        "method": "row_bands",
+        "mode": "one_column",
+        "ink_pixels": 429566,
+        "line_bands": 12
+      },
+      "evidence": {
+        "label_status": "unknown",
+        "pixels_are_evidence_not_truth": true
+      },
+      "detector_role_before_calibration": "unknown",
+      "semantic_votes": {
+        "footnote": 0.1044921875,
+        "main_text": 0.757421875,
+        "page_number": 0.030729166666666665,
+        "running_header": 0.0,
+        "separator": 0.08984375,
+        "title": 0.017513020833333334
+      },
+      "semantic_confidence": 0.757421875,
+      "container_id": "physical1_z001_single",
+      "stream_id": "main",
+      "detector_role": "unknown",
+      "detector_confidence": 0.77,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0004",
+      "role": "auxiliary_text",
+      "confidence": 0.674997,
+      "bbox": [
+        497.90629,
+        699.80466,
+        997.77185,
+        721.01606
+      ],
+      "bbox_pixels": [
+        1109.833,
+        2394.032,
+        2224.033,
+        2466.596
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "physical1_z001_single",
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.3629185267857144,
+        "main_text": 0.23010602678571435,
+        "page_number": 0.12417224702380954,
+        "running_header": 0.03850446428571429,
+        "separator": 0.05998883928571429,
+        "title": 0.18430989583333332
+      },
+      "semantic_confidence": 0.3629185267857144,
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.674997,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0001",
+      "role": "auxiliary_text",
+      "confidence": 0.90003,
+      "bbox": [
+        1.02002,
+        882.2111,
+        998.20295,
+        975.38041
+      ],
+      "bbox_pixels": [
+        2.274,
+        3018.044,
+        2224.994,
+        3336.776
+      ],
+      "review_flags": [],
+      "container_id": "physical1_z001_single",
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.8757254464285715,
+        "main_text": 0.054324776785714284,
+        "page_number": 0.025027901785714284,
+        "running_header": 0.00390625,
+        "separator": 0.0,
+        "title": 0.041015625
+      },
+      "semantic_confidence": 0.8757254464285715,
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.90003,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    },
+    {
+      "id": "r0002",
+      "role": "unknown",
+      "confidence": 0.876135,
+      "bbox": [
+        480.13693,
+        981.51332,
+        517.57413,
+        998.89519
+      ],
+      "bbox_pixels": [
+        1070.225,
+        3357.757,
+        1153.673,
+        3417.22
+      ],
+      "review_flags": [
+        "unresolved_role"
+      ],
+      "container_id": null,
+      "detector_role_before_calibration": "unknown",
+      "semantic_abstention_reason": "detector_role_absent_from_reviewed_setup",
+      "semantic_votes": {
+        "footnote": 0.15906808035714284,
+        "main_text": 0.03802083333333334,
+        "page_number": 0.5291294642857143,
+        "running_header": 0.015625,
+        "separator": 0.017020089285714284,
+        "title": 0.2411365327380952
+      },
+      "semantic_confidence": 0.5291294642857143,
+      "stream_id": "aux_unknown",
+      "detector_role": "unknown",
+      "detector_confidence": 0.876135,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Split blocks at distinct responsa; separate auxiliary text."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "footnote",
+      "confidence": 0.90003,
+      "bbox": [
+        1.02002,
+        882.2111,
+        998.20295,
+        975.38041
+      ],
+      "bbox_pixels": [
+        2.274,
+        3018.044,
+        2224.994,
+        3336.776
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "unknown",
+      "confidence": 0.876135,
+      "bbox": [
+        480.13693,
+        981.51332,
+        517.57413,
+        998.89519
+      ],
+      "bbox_pixels": [
+        1070.225,
+        3357.757,
+        1153.673,
+        3417.22
+      ],
+      "review_flags": [
+        "unresolved_role"
+      ]
+    },
+    {
+      "id": "r0003",
+      "role": "title",
+      "confidence": 0.868767,
+      "bbox": [
+        330.56679,
+        0.44469,
+        671.17423,
+        30.42402
+      ],
+      "bbox_pixels": [
+        736.833,
+        1.521,
+        1496.047,
+        104.081
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "footnote",
+      "confidence": 0.674997,
+      "bbox": [
+        497.90629,
+        699.80466,
+        997.77185,
+        721.01606
+      ],
+      "bbox_pixels": [
+        1109.833,
+        2394.032,
+        2224.033,
+        2466.596
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0005",
+      "role": "title",
+      "confidence": 0.672874,
+      "bbox": [
+        464.83855,
+        61.77826,
+        542.04148,
+        81.9954
+      ],
+      "bbox_pixels": [
+        1036.125,
+        211.343,
+        1208.21,
+        280.506
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0006",
+      "role": "title",
+      "confidence": 0.518516,
+      "bbox": [
+        377.53125,
+        415.30647,
+        623.7897,
+        435.446
+      ],
+      "bbox_pixels": [
+        841.517,
+        1420.763,
+        1390.427,
+        1489.661
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0007",
+      "role": "title",
+      "confidence": 0.426822,
+      "bbox": [
+        376.739,
+        415.25815,
+        619.82151,
+        436.49243
+      ],
+      "bbox_pixels": [
+        839.751,
+        1420.598,
+        1381.582,
+        1493.241
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0008",
+      "role": "separator",
+      "confidence": 0.341607,
+      "bbox": [
+        174.15274,
+        320.53527,
+        997.91785,
+        342.81997
+      ],
+      "bbox_pixels": [
+        388.186,
+        1096.551,
+        2224.359,
+        1172.787
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0009",
+      "role": "separator",
+      "confidence": 0.33478,
+      "bbox": [
+        117.67165,
+        825.00462,
+        969.38866,
+        849.45965
+      ],
+      "bbox_pixels": [
+        262.29,
+        2822.341,
+        2160.767,
+        2906.001
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0010",
+      "role": "title",
+      "confidence": 0.323828,
+      "bbox": [
+        331.83632,
+        0.50817,
+        668.95134,
+        30.42691
+      ],
+      "bbox_pixels": [
+        739.663,
+        1.738,
+        1491.093,
+        104.09
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0011",
+      "role": "separator",
+      "confidence": 0.320859,
+      "bbox": [
+        146.06296,
+        729.4159,
+        997.66648,
+        753.93765
+      ],
+      "bbox_pixels": [
+        325.574,
+        2495.332,
+        2223.799,
+        2579.221
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0012",
+      "role": "title",
+      "confidence": 0.293555,
+      "bbox": [
+        455.98095,
+        385.13983,
+        547.21931,
+        405.53999
+      ],
+      "bbox_pixels": [
+        1016.382,
+        1317.563,
+        1219.752,
+        1387.352
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0013",
+      "role": "separator",
+      "confidence": 0.292413,
+      "bbox": [
+        145.86412,
+        635.31785,
+        997.96265,
+        659.27653
+      ],
+      "bbox_pixels": [
+        325.131,
+        2173.422,
+        2224.459,
+        2255.385
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0014",
+      "role": "separator",
+      "confidence": 0.206827,
+      "bbox": [
+        146.07609,
+        760.59439,
+        997.81423,
+        784.44559
+      ],
+      "bbox_pixels": [
+        325.604,
+        2601.993,
+        2224.128,
+        2683.588
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "372ecac1fee618048baba543e3077ba7f27cc155f760230fec2f662ca54614cb",
+    "input_count": 14,
+    "retained_count": 13,
+    "removed_ids": [
+      "r0010"
+    ],
+    "decisions": [
+      {
+        "removed_id": "r0010",
+        "retained_id": "r0003",
+        "role": "title",
+        "iou": 0.9875565236385185,
+        "removed_confidence": 0.323828,
+        "retained_confidence": 0.868767,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      }
+    ],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "requires_review": true,
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        464.83855,
+        61.77826,
+        542.04148,
+        81.9954
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        1036.125,
+        211.343,
+        1208.21,
+        280.506
+      ]
+    },
+    {
+      "id": "main_z002",
+      "kind": "zone",
+      "bbox": [
+        8.524,
+        81.5551,
+        995.06505,
+        342.58989
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        19.0,
+        279.0,
+        2218.0,
+        1172.0
+      ]
+    },
+    {
+      "id": "main_z002_single",
+      "kind": "column",
+      "bbox": [
+        8.524,
+        81.5551,
+        995.06505,
+        342.58989
+      ],
+      "parent_id": "main_z002",
+      "bbox_pixels": [
+        19.0,
+        279.0,
+        2218.0,
+        1172.0
+      ]
+    },
+    {
+      "id": "main_z003",
+      "kind": "zone",
+      "bbox": [
+        455.98095,
+        385.13983,
+        547.21931,
+        405.53999
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        1016.382,
+        1317.563,
+        1219.752,
+        1387.352
+      ]
+    },
+    {
+      "id": "main_z004",
+      "kind": "zone",
+      "bbox": [
+        376.739,
+        415.25815,
+        619.82151,
+        436.49243
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        839.751,
+        1420.598,
+        1381.582,
+        1493.241
+      ]
+    },
+    {
+      "id": "main_z005",
+      "kind": "zone",
+      "bbox": [
+        377.53125,
+        415.30647,
+        623.7897,
+        435.446
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        841.517,
+        1420.763,
+        1390.427,
+        1489.661
+      ]
+    },
+    {
+      "id": "physical1_z001",
+      "kind": "zone",
+      "bbox": [
+        1.02002,
+        478.80737,
+        998.20295,
+        975.38041
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        2.274,
+        1638.0,
+        2224.994,
+        3336.776
+      ]
+    },
+    {
+      "id": "physical1_z001_single",
+      "kind": "column",
+      "bbox": [
+        1.02002,
+        478.80737,
+        998.20295,
+        975.38041
+      ],
+      "parent_id": "physical1_z001",
+      "bbox_pixels": [
+        2.274,
+        1638.0,
+        2224.994,
+        3336.776
+      ]
+    }
+  ],
+  "reading_order": {
+    "aux_unknown": [
+      "r0002"
+    ],
+    "auxiliary": [
+      "r0004",
+      "r0001"
+    ],
+    "header": [
+      "r0003"
+    ],
+    "main": [
+      "r0005",
+      "ink_recovery_0001",
+      "r0012",
+      "r0007",
+      "r0006",
+      "ink_recovery_0002"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "geometry_recovery": {
+    "enabled": true,
+    "mode": "one_column",
+    "source": "page_pixels",
+    "proposals": 2,
+    "separator_review": [
+      {
+        "id": "r0008",
+        "action": "remove_text_like",
+        "evidence": {
+          "actual_rule": false,
+          "text_like": true,
+          "longest_run_ratio": 0.0169,
+          "ink_rows": 69
+        }
+      },
+      {
+        "id": "r0013",
+        "action": "remove_text_like",
+        "evidence": {
+          "actual_rule": false,
+          "text_like": true,
+          "longest_run_ratio": 0.0205,
+          "ink_rows": 68
+        }
+      },
+      {
+        "id": "r0011",
+        "action": "remove_text_like",
+        "evidence": {
+          "actual_rule": false,
+          "text_like": true,
+          "longest_run_ratio": 0.0216,
+          "ink_rows": 69
+        }
+      },
+      {
+        "id": "r0014",
+        "action": "remove_text_like",
+        "evidence": {
+          "actual_rule": false,
+          "text_like": true,
+          "longest_run_ratio": 0.0205,
+          "ink_rows": 68
+        }
+      },
+      {
+        "id": "r0009",
+        "action": "remove_text_like",
+        "evidence": {
+          "actual_rule": false,
+          "text_like": true,
+          "longest_run_ratio": 0.03,
+          "ink_rows": 69
+        }
+      }
+    ],
+    "hypothesis": "clean one-column text rows can recover omitted body geometry while true horizontal rules remain rules",
+    "confidence_is_recovery_evidence": true
+  },
+  "book_calibration": {
+    "book_id": "edition:646759",
+    "model_sha256": "c41397814da97254fdee932952994ebb31c5e17de667a72c5b3b42fce19997c0",
+    "source_image_sha256": "8ea5b365fe607b58a9aa8f244a19747dd7afa7066c9c6658ee152054b9b7d288",
+    "unsupported_roles": [
+      "commentary",
+      "unknown"
+    ],
+    "calibration_page_overlap": false,
+    "requires_review": true,
+    "confidence_interpretation": "Uncalibrated tree votes; not a correctness guarantee.",
+    "abstention_policy": "An unsupported detector role becomes unknown. Geometry-only proposals may receive a supported role at tree vote >=0.7; this threshold is experimental."
+  },
+  "review_required": true,
+  "source_pdf_page_1based": 94,
+  "otzar_id": "646759",
+  "work_ids": [
+    "W01914"
+  ],
+  "source_pdf_sha256": "b3307e169ecf2b84b425e9088e02fbd1001ed8d98da5079f5e402127abab625e",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pipeline_one_column_v2/layout.json",
+    "proposal_sha256": "9074acaeac45f46595d081640bb625b43cf99c89d15e80091d76bb8d8725e5eb",
+    "original_allocation": "evaluation",
+    "purpose": "Split blocks at distinct responsa; separate auxiliary text."
+  }
+}

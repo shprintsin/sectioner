@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shprintsin/sectioner/schema/projects.schema.json",
+  "title": "Sectioner projects.json",
+  "type": "object",
+  "required": [
+    "projects"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "kind",
+          "worksets",
+          "tags"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]{0,62}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "book",
+              "newspaper",
+              "text"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "rtl",
+              "ltr",
+              "auto"
+            ],
+            "description": "text projects only"
+          },
+          "worksets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "tags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "base"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9_]{0,47}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "base": {
+                  "type": "string",
+                  "description": "book: a page role (main_text, title, subtitle, commentary, footnote, running_header, page_number, separator, unknown, auxiliary_text, signature, page_footer, summary, date, table, noise, figure). newspaper: a section type (ARTICLE, ADVERTISEMENT, MASTHEAD, RUNNING_HEAD, SECTION, TABLE_OF_CONTENTS, IMPRINT, ILLUSTRATION, NOISE, PUBLICATION_INFO). text: a TEI element name, optionally with one predicate, e.g. seg[@type='x']."
+                },
+                "key": {
+                  "type": "string",
+                  "description": "The tag's key; empty for none. Text projects read only a single letter or digit."
+                },
+                "icon": {
+                  "enum": [
+                    "paragraph",
+                    "heading",
+                    "subheading",
+                    "comment",
+                    "footnote",
+                    "header",
+                    "footer",
+                    "hash",
+                    "rule",
+                    "question",
+                    "aside",
+                    "signature",
+                    "summary",
+                    "calendar",
+                    "table",
+                    "noise",
+                    "image",
+                    "article",
+                    "megaphone",
+                    "masthead",
+                    "info",
+                    "folder",
+                    "list",
+                    "stamp",
+                    "star",
+                    "flag",
+                    "bookmark",
+                    "quote",
+                    "link",
+                    "user",
+                    "pin",
+                    "tag",
+                    "circle",
+                    "square",
+                    "triangle",
+                    "diamond",
+                    "check",
+                    "cross",
+                    "scroll",
+                    "book",
+                    "mail",
+                    "money",
+                    "eye",
+                    "bolt"
+                  ]
+                },
+                "hue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 360
+                },
+                "chroma": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 0.4
+                },
+                "description": {
+                  "type": "string"
+                },
+                "labelAlt": {
+                  "type": "string",
+                  "description": "text: a second name shown beside the label"
+                },
+                "color": {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}$",
+                  "description": "text: overrides hue and chroma"
+                },
+                "scope": {
+                  "const": "document",
+                  "description": "text: the tag classifies a whole document"
+                },
+                "popular": {
+                  "type": "boolean",
+                  "description": "text: offer in the selection menu"
+                },
+                "attrs": {
+                  "type": "array",
+                  "description": "text: fields filled on a span",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "kind",
+                      "label",
+                      "tei"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,47}$"
+                      },
+                      "kind": {
+                        "enum": [
+                          "text",
+                          "number",
+                          "enum"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "tei": {
+                        "type": "string",
+                        "description": "where it lands in TEI, e.g. @when"
+                      },
+                      "values": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "minItems": 1,
+                        "description": "required for kind enum"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "keymap": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "A key chord: M, Shift+1, Ctrl+Alt+T, ArrowDown, Space…"
+              }
+            }
+          },
+          "created": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

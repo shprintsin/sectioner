@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.next-dev/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+# Your annotation data. The default data folder is ./data; point SECTIONER_DATA elsewhere
+# to keep it in its own repository.
+/data/

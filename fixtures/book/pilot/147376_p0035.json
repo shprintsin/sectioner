@@ -1,0 +1,736 @@
+{
+  "page_id": "147376_p0035",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/147376/147376_p0035.png",
+    "sha256": "d8a11dca20a08c19e2d9545acaf9812d8bb8e37c27461628adad845f9fe9e59c",
+    "kind": "image"
+  },
+  "review_flags": [],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/147376/147376_p0035.png",
+  "image_sha256": "d8a11dca20a08c19e2d9545acaf9812d8bb8e37c27461628adad845f9fe9e59c",
+  "width": 2791,
+  "height": 4104,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/147376_p0035.png",
+  "render_image_sha256": "669b36ff144f796e3b4c5769d609be471a363fbe05da0c7a8a8918294aa4eabd",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 2.0703,
+  "regions": [
+    {
+      "id": "r0006",
+      "role": "running_header",
+      "confidence": 0.979049,
+      "bbox": [
+        704.77004,
+        0.0,
+        808.96097,
+        22.06237
+      ],
+      "bbox_pixels": [
+        1967.013,
+        0.0,
+        2257.81,
+        90.544
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.979049,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0005",
+      "role": "running_header",
+      "confidence": 0.983831,
+      "bbox": [
+        162.22077,
+        0.0,
+        325.99124,
+        26.14825
+      ],
+      "bbox_pixels": [
+        452.758,
+        0.0,
+        909.842,
+        107.312
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.983831,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0012",
+      "role": "page_number",
+      "confidence": 0.812811,
+      "bbox": [
+        2.43171,
+        0.01574,
+        46.79248,
+        22.91408
+      ],
+      "bbox_pixels": [
+        6.787,
+        0.065,
+        130.598,
+        94.039
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "page_number",
+      "detector_role": "page_number",
+      "detector_confidence": 0.812811,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0009",
+      "role": "running_header",
+      "confidence": 0.951378,
+      "bbox": [
+        395.95306,
+        1.09684,
+        596.54966,
+        25.15452
+      ],
+      "bbox_pixels": [
+        1105.105,
+        4.501,
+        1664.97,
+        103.234
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.951378,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0001",
+      "role": "main_text",
+      "confidence": 0.995387,
+      "bbox": [
+        512.73529,
+        46.05915,
+        1000.0,
+        488.02462
+      ],
+      "bbox_pixels": [
+        1431.044,
+        189.027,
+        2791.0,
+        2002.853
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.995387,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.954778,
+      "bbox": [
+        0.0,
+        50.22482,
+        477.30568,
+        164.6592
+      ],
+      "bbox_pixels": [
+        0.0,
+        206.123,
+        1332.16,
+        675.761
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.954778,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0011",
+      "role": "title",
+      "confidence": 0.834925,
+      "bbox": [
+        197.28459,
+        200.60653,
+        273.67963,
+        219.6776
+      ],
+      "bbox_pixels": [
+        550.621,
+        823.289,
+        763.84,
+        901.557
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.834925,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0004",
+      "role": "main_text",
+      "confidence": 0.985533,
+      "bbox": [
+        0.0,
+        225.95081,
+        482.38828,
+        721.58998
+      ],
+      "bbox_pixels": [
+        0.0,
+        927.302,
+        1346.346,
+        2961.405
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.985533,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0013",
+      "role": "main_text",
+      "confidence": 0.59126,
+      "bbox": [
+        516.10554,
+        500.64753,
+        846.16884,
+        522.92435
+      ],
+      "bbox_pixels": [
+        1440.451,
+        2054.657,
+        2361.657,
+        2146.082
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.59126,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0010",
+      "role": "title",
+      "confidence": 0.925668,
+      "bbox": [
+        702.55944,
+        556.02129,
+        811.25717,
+        581.25255
+      ],
+      "bbox_pixels": [
+        1960.843,
+        2281.911,
+        2264.219,
+        2385.46
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.925668,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0007",
+      "role": "main_text",
+      "confidence": 0.966734,
+      "bbox": [
+        518.60271,
+        589.68289,
+        996.07258,
+        653.79212
+      ],
+      "bbox_pixels": [
+        1447.42,
+        2420.059,
+        2780.039,
+        2683.163
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.966734,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0002",
+      "role": "main_text",
+      "confidence": 0.992892,
+      "bbox": [
+        515.62408,
+        667.08796,
+        1000.0,
+        998.82391
+      ],
+      "bbox_pixels": [
+        1439.107,
+        2737.729,
+        2791.0,
+        4099.173
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.992892,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    },
+    {
+      "id": "r0003",
+      "role": "main_text",
+      "confidence": 0.991188,
+      "bbox": [
+        0.0,
+        740.73438,
+        482.61773,
+        999.65402
+      ],
+      "bbox_pixels": [
+        0.0,
+        3039.974,
+        1346.986,
+        4102.58
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.991188,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check headings and where a new responsum starts."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "main_text",
+      "confidence": 0.995387,
+      "bbox": [
+        512.73529,
+        46.05915,
+        1000.0,
+        488.02462
+      ],
+      "bbox_pixels": [
+        1431.044,
+        189.027,
+        2791.0,
+        2002.853
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "main_text",
+      "confidence": 0.992892,
+      "bbox": [
+        515.62408,
+        667.08796,
+        1000.0,
+        998.82391
+      ],
+      "bbox_pixels": [
+        1439.107,
+        2737.729,
+        2791.0,
+        4099.173
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0003",
+      "role": "main_text",
+      "confidence": 0.991188,
+      "bbox": [
+        0.0,
+        740.73438,
+        482.61773,
+        999.65402
+      ],
+      "bbox_pixels": [
+        0.0,
+        3039.974,
+        1346.986,
+        4102.58
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "main_text",
+      "confidence": 0.985533,
+      "bbox": [
+        0.0,
+        225.95081,
+        482.38828,
+        721.58998
+      ],
+      "bbox_pixels": [
+        0.0,
+        927.302,
+        1346.346,
+        2961.405
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0005",
+      "role": "running_header",
+      "confidence": 0.983831,
+      "bbox": [
+        162.22077,
+        0.0,
+        325.99124,
+        26.14825
+      ],
+      "bbox_pixels": [
+        452.758,
+        0.0,
+        909.842,
+        107.312
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0006",
+      "role": "running_header",
+      "confidence": 0.979049,
+      "bbox": [
+        704.77004,
+        0.0,
+        808.96097,
+        22.06237
+      ],
+      "bbox_pixels": [
+        1967.013,
+        0.0,
+        2257.81,
+        90.544
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0007",
+      "role": "main_text",
+      "confidence": 0.966734,
+      "bbox": [
+        518.60271,
+        589.68289,
+        996.07258,
+        653.79212
+      ],
+      "bbox_pixels": [
+        1447.42,
+        2420.059,
+        2780.039,
+        2683.163
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.954778,
+      "bbox": [
+        0.0,
+        50.22482,
+        477.30568,
+        164.6592
+      ],
+      "bbox_pixels": [
+        0.0,
+        206.123,
+        1332.16,
+        675.761
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0009",
+      "role": "running_header",
+      "confidence": 0.951378,
+      "bbox": [
+        395.95306,
+        1.09684,
+        596.54966,
+        25.15452
+      ],
+      "bbox_pixels": [
+        1105.105,
+        4.501,
+        1664.97,
+        103.234
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0010",
+      "role": "title",
+      "confidence": 0.925668,
+      "bbox": [
+        702.55944,
+        556.02129,
+        811.25717,
+        581.25255
+      ],
+      "bbox_pixels": [
+        1960.843,
+        2281.911,
+        2264.219,
+        2385.46
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0011",
+      "role": "title",
+      "confidence": 0.834925,
+      "bbox": [
+        197.28459,
+        200.60653,
+        273.67963,
+        219.6776
+      ],
+      "bbox_pixels": [
+        550.621,
+        823.289,
+        763.84,
+        901.557
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0012",
+      "role": "page_number",
+      "confidence": 0.812811,
+      "bbox": [
+        2.43171,
+        0.01574,
+        46.79248,
+        22.91408
+      ],
+      "bbox_pixels": [
+        6.787,
+        0.065,
+        130.598,
+        94.039
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0013",
+      "role": "main_text",
+      "confidence": 0.59126,
+      "bbox": [
+        516.10554,
+        500.64753,
+        846.16884,
+        522.92435
+      ],
+      "bbox_pixels": [
+        1440.451,
+        2054.657,
+        2361.657,
+        2146.082
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "32be98c4ecbf1d723af920cd913d061a99bc79f7e53215579eed6652b1f9e99a",
+    "input_count": 13,
+    "retained_count": 13,
+    "removed_ids": [],
+    "decisions": [],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        0.0,
+        46.05915,
+        1000.0,
+        999.65402
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        0.0,
+        189.027,
+        2791.0,
+        4102.58
+      ]
+    },
+    {
+      "id": "main_z001_right",
+      "kind": "column",
+      "bbox": [
+        512.73529,
+        46.05915,
+        1000.0,
+        998.82391
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        1431.044,
+        189.027,
+        2791.0,
+        4099.173
+      ]
+    },
+    {
+      "id": "main_z001_left",
+      "kind": "column",
+      "bbox": [
+        0.0,
+        50.22482,
+        482.61773,
+        999.65402
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        0.0,
+        206.123,
+        1346.986,
+        4102.58
+      ]
+    }
+  ],
+  "reading_order": {
+    "header": [
+      "r0006",
+      "r0009",
+      "r0005"
+    ],
+    "main": [
+      "r0001",
+      "r0013",
+      "r0010",
+      "r0007",
+      "r0002",
+      "r0008",
+      "r0011",
+      "r0004",
+      "r0003"
+    ],
+    "page_number": [
+      "r0012"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "requires_review": true,
+  "source_pdf_page_1based": 35,
+  "otzar_id": "147376",
+  "work_ids": [
+    "W01271"
+  ],
+  "source_pdf_sha256": "361a23d234e3f7ac304e0afaadfba6722380e7e3528a3f74e63a50ad2afa568d",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/predictions.json",
+    "proposal_sha256": "20aadb40242676d2037b8d7e26b18b91c65d68e667767150c1c47291b6c8522e",
+    "original_allocation": "evaluation",
+    "purpose": "Check headings and where a new responsum starts."
+  }
+}

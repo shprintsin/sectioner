@@ -1,0 +1,1060 @@
+{
+  "page_id": "698274_p0033",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/698274/698274_p0033.png",
+    "sha256": "48ab4fdf3d921c4e38990743d6a4473d931a71039738ac20740d18b56d5d1206",
+    "kind": "image"
+  },
+  "review_flags": [
+    "near_identical_same_role_proposals_removed"
+  ],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/698274/698274_p0033.png",
+  "image_sha256": "48ab4fdf3d921c4e38990743d6a4473d931a71039738ac20740d18b56d5d1206",
+  "width": 4882,
+  "height": 8027,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/698274_p0033.png",
+  "render_image_sha256": "386845fe049a15b877ecedd44ad7122d7621e86e68b944fda7ad5663a3fbb967",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 1.8319,
+  "regions": [
+    {
+      "id": "r0004",
+      "role": "running_header",
+      "confidence": 0.988339,
+      "bbox": [
+        207.07707,
+        1.80665,
+        310.64979,
+        28.4139
+      ],
+      "bbox_pixels": [
+        1010.95,
+        14.502,
+        1516.592,
+        228.078
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.988339,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.988759,
+      "bbox": [
+        701.05966,
+        4.42576,
+        798.00694,
+        28.30003
+      ],
+      "bbox_pixels": [
+        3422.573,
+        35.526,
+        3895.87,
+        227.164
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.988759,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0008",
+      "role": "page_number",
+      "confidence": 0.890837,
+      "bbox": [
+        954.54394,
+        5.29142,
+        999.45811,
+        28.12819
+      ],
+      "bbox_pixels": [
+        4660.083,
+        42.474,
+        4879.354,
+        225.785
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "page_number",
+      "detector_role": "page_number",
+      "detector_confidence": 0.890837,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0005",
+      "role": "running_header",
+      "confidence": 0.9861,
+      "bbox": [
+        410.73787,
+        6.65903,
+        599.52931,
+        28.26414
+      ],
+      "bbox_pixels": [
+        2005.222,
+        53.452,
+        2926.902,
+        226.876
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.9861,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0001",
+      "role": "title",
+      "confidence": 0.994456,
+      "bbox": [
+        425.01182,
+        99.25197,
+        576.03675,
+        129.73472
+      ],
+      "bbox_pixels": [
+        2074.908,
+        796.696,
+        2812.211,
+        1041.381
+      ],
+      "review_flags": [],
+      "container_id": "main_z001",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.994456,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0015",
+      "role": "title",
+      "confidence": 0.512781,
+      "bbox": [
+        196.53229,
+        137.71768,
+        812.86366,
+        165.36047
+      ],
+      "bbox_pixels": [
+        959.471,
+        1105.46,
+        3968.4,
+        1327.349
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z002",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.512781,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0012",
+      "role": "title",
+      "confidence": 0.763467,
+      "bbox": [
+        460.32585,
+        190.83161,
+        544.48445,
+        213.55527
+      ],
+      "bbox_pixels": [
+        2247.311,
+        1531.805,
+        2658.173,
+        1714.208
+      ],
+      "review_flags": [],
+      "container_id": "main_z003",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.763467,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0013",
+      "role": "main_text",
+      "confidence": 0.632926,
+      "bbox": [
+        80.24886,
+        224.41531,
+        919.55581,
+        400.93606
+      ],
+      "bbox_pixels": [
+        391.775,
+        1801.382,
+        4489.271,
+        3218.314
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z004_single",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.632926,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0010",
+      "role": "title",
+      "confidence": 0.841597,
+      "bbox": [
+        452.17619,
+        424.71299,
+        551.052,
+        445.00364
+      ],
+      "bbox_pixels": [
+        2207.524,
+        3409.171,
+        2690.236,
+        3572.044
+      ],
+      "review_flags": [],
+      "container_id": "main_z005",
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.841597,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0011",
+      "role": "main_text",
+      "confidence": 0.837519,
+      "bbox": [
+        6.02815,
+        455.67185,
+        478.50072,
+        523.98041
+      ],
+      "bbox_pixels": [
+        29.429,
+        3657.678,
+        2336.041,
+        4205.991
+      ],
+      "review_flags": [],
+      "container_id": "main_z006_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.837519,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0002",
+      "role": "main_text",
+      "confidence": 0.989738,
+      "bbox": [
+        513.86946,
+        457.53069,
+        994.62721,
+        961.39683
+      ],
+      "bbox_pixels": [
+        2508.711,
+        3672.599,
+        4855.77,
+        7717.132
+      ],
+      "review_flags": [],
+      "container_id": "main_z006_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.989738,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0009",
+      "role": "main_text",
+      "confidence": 0.890722,
+      "bbox": [
+        2.51286,
+        539.62092,
+        483.01182,
+        801.53
+      ],
+      "bbox_pixels": [
+        12.268,
+        4331.537,
+        2358.064,
+        6433.881
+      ],
+      "review_flags": [],
+      "container_id": "main_z006_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.890722,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0006",
+      "role": "main_text",
+      "confidence": 0.913778,
+      "bbox": [
+        4.32499,
+        818.73482,
+        478.99651,
+        959.90802
+      ],
+      "bbox_pixels": [
+        21.115,
+        6571.984,
+        2338.461,
+        7705.182
+      ],
+      "review_flags": [],
+      "container_id": "main_z006_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.913778,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    },
+    {
+      "id": "r0007",
+      "role": "auxiliary_text",
+      "confidence": 0.896978,
+      "bbox": [
+        816.76201,
+        982.283,
+        995.90562,
+        998.41149
+      ],
+      "bbox_pixels": [
+        3987.432,
+        7884.786,
+        4862.011,
+        8014.249
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.896978,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check spanning headings and column restart; question and answer may belong to one responsum."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "title",
+      "confidence": 0.994456,
+      "bbox": [
+        425.01182,
+        99.25197,
+        576.03675,
+        129.73472
+      ],
+      "bbox_pixels": [
+        2074.908,
+        796.696,
+        2812.211,
+        1041.381
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "main_text",
+      "confidence": 0.989738,
+      "bbox": [
+        513.86946,
+        457.53069,
+        994.62721,
+        961.39683
+      ],
+      "bbox_pixels": [
+        2508.711,
+        3672.599,
+        4855.77,
+        7717.132
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.988759,
+      "bbox": [
+        701.05966,
+        4.42576,
+        798.00694,
+        28.30003
+      ],
+      "bbox_pixels": [
+        3422.573,
+        35.526,
+        3895.87,
+        227.164
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "running_header",
+      "confidence": 0.988339,
+      "bbox": [
+        207.07707,
+        1.80665,
+        310.64979,
+        28.4139
+      ],
+      "bbox_pixels": [
+        1010.95,
+        14.502,
+        1516.592,
+        228.078
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0005",
+      "role": "running_header",
+      "confidence": 0.9861,
+      "bbox": [
+        410.73787,
+        6.65903,
+        599.52931,
+        28.26414
+      ],
+      "bbox_pixels": [
+        2005.222,
+        53.452,
+        2926.902,
+        226.876
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0006",
+      "role": "main_text",
+      "confidence": 0.913778,
+      "bbox": [
+        4.32499,
+        818.73482,
+        478.99651,
+        959.90802
+      ],
+      "bbox_pixels": [
+        21.115,
+        6571.984,
+        2338.461,
+        7705.182
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0007",
+      "role": "footnote",
+      "confidence": 0.896978,
+      "bbox": [
+        816.76201,
+        982.283,
+        995.90562,
+        998.41149
+      ],
+      "bbox_pixels": [
+        3987.432,
+        7884.786,
+        4862.011,
+        8014.249
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0008",
+      "role": "page_number",
+      "confidence": 0.890837,
+      "bbox": [
+        954.54394,
+        5.29142,
+        999.45811,
+        28.12819
+      ],
+      "bbox_pixels": [
+        4660.083,
+        42.474,
+        4879.354,
+        225.785
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0009",
+      "role": "main_text",
+      "confidence": 0.890722,
+      "bbox": [
+        2.51286,
+        539.62092,
+        483.01182,
+        801.53
+      ],
+      "bbox_pixels": [
+        12.268,
+        4331.537,
+        2358.064,
+        6433.881
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0010",
+      "role": "title",
+      "confidence": 0.841597,
+      "bbox": [
+        452.17619,
+        424.71299,
+        551.052,
+        445.00364
+      ],
+      "bbox_pixels": [
+        2207.524,
+        3409.171,
+        2690.236,
+        3572.044
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0011",
+      "role": "main_text",
+      "confidence": 0.837519,
+      "bbox": [
+        6.02815,
+        455.67185,
+        478.50072,
+        523.98041
+      ],
+      "bbox_pixels": [
+        29.429,
+        3657.678,
+        2336.041,
+        4205.991
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0012",
+      "role": "title",
+      "confidence": 0.763467,
+      "bbox": [
+        460.32585,
+        190.83161,
+        544.48445,
+        213.55527
+      ],
+      "bbox_pixels": [
+        2247.311,
+        1531.805,
+        2658.173,
+        1714.208
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0013",
+      "role": "main_text",
+      "confidence": 0.632926,
+      "bbox": [
+        80.24886,
+        224.41531,
+        919.55581,
+        400.93606
+      ],
+      "bbox_pixels": [
+        391.775,
+        1801.382,
+        4489.271,
+        3218.314
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0014",
+      "role": "main_text",
+      "confidence": 0.611676,
+      "bbox": [
+        1.71357,
+        456.01548,
+        483.09224,
+        524.34593
+      ],
+      "bbox_pixels": [
+        8.366,
+        3660.436,
+        2358.456,
+        4208.925
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0015",
+      "role": "title",
+      "confidence": 0.512781,
+      "bbox": [
+        196.53229,
+        137.71768,
+        812.86366,
+        165.36047
+      ],
+      "bbox_pixels": [
+        959.471,
+        1105.46,
+        3968.4,
+        1327.349
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0016",
+      "role": "main_text",
+      "confidence": 0.5056,
+      "bbox": [
+        4.24706,
+        539.64428,
+        481.39515,
+        802.04335
+      ],
+      "bbox_pixels": [
+        20.734,
+        4331.725,
+        2350.171,
+        6438.002
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0017",
+      "role": "main_text",
+      "confidence": 0.489368,
+      "bbox": [
+        80.37012,
+        223.60174,
+        921.01736,
+        401.0096
+      ],
+      "bbox_pixels": [
+        392.367,
+        1794.851,
+        4496.407,
+        3218.904
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0018",
+      "role": "title",
+      "confidence": 0.336439,
+      "bbox": [
+        192.10909,
+        137.65442,
+        805.04186,
+        165.34277
+      ],
+      "bbox_pixels": [
+        937.877,
+        1104.952,
+        3930.214,
+        1327.206
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0019",
+      "role": "main_text",
+      "confidence": 0.240973,
+      "bbox": [
+        4.85475,
+        817.32642,
+        481.89139,
+        959.74037
+      ],
+      "bbox_pixels": [
+        23.701,
+        6560.679,
+        2352.594,
+        7703.836
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "b016e6823cb4f14bb380a6bc373517aaaeea68dced641211bb4ddc51e43f8f52",
+    "input_count": 19,
+    "retained_count": 14,
+    "removed_ids": [
+      "r0014",
+      "r0016",
+      "r0017",
+      "r0018",
+      "r0019"
+    ],
+    "decisions": [
+      {
+        "removed_id": "r0014",
+        "retained_id": "r0011",
+        "role": "main_text",
+        "iou": 0.9714534353611315,
+        "removed_confidence": 0.611676,
+        "retained_confidence": 0.837519,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      },
+      {
+        "removed_id": "r0016",
+        "retained_id": "r0009",
+        "role": "main_text",
+        "iou": 0.9910088382339264,
+        "removed_confidence": 0.5056,
+        "retained_confidence": 0.890722,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      },
+      {
+        "removed_id": "r0017",
+        "retained_id": "r0013",
+        "role": "main_text",
+        "iou": 0.9931271560500314,
+        "removed_confidence": 0.489368,
+        "retained_confidence": 0.632926,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      },
+      {
+        "removed_id": "r0018",
+        "retained_id": "r0015",
+        "role": "title",
+        "iou": 0.9774421140136299,
+        "removed_confidence": 0.336439,
+        "retained_confidence": 0.512781,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      },
+      {
+        "removed_id": "r0019",
+        "retained_id": "r0006",
+        "role": "main_text",
+        "iou": 0.9818723291235968,
+        "removed_confidence": 0.240973,
+        "retained_confidence": 0.913778,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      }
+    ],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "requires_review": true,
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "footnotes_z001",
+      "kind": "zone",
+      "bbox": [
+        816.76201,
+        982.283,
+        995.90562,
+        998.41149
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        3987.432,
+        7884.786,
+        4862.011,
+        8014.249
+      ]
+    },
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        425.01182,
+        99.25197,
+        576.03675,
+        129.73472
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        2074.908,
+        796.696,
+        2812.211,
+        1041.381
+      ]
+    },
+    {
+      "id": "main_z002",
+      "kind": "zone",
+      "bbox": [
+        196.53229,
+        137.71768,
+        812.86366,
+        165.36047
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        959.471,
+        1105.46,
+        3968.4,
+        1327.348
+      ]
+    },
+    {
+      "id": "main_z003",
+      "kind": "zone",
+      "bbox": [
+        460.32585,
+        190.83161,
+        544.48445,
+        213.55527
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        2247.311,
+        1531.805,
+        2658.173,
+        1714.208
+      ]
+    },
+    {
+      "id": "main_z004",
+      "kind": "zone",
+      "bbox": [
+        80.24886,
+        224.41531,
+        919.55581,
+        400.93606
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        391.775,
+        1801.382,
+        4489.271,
+        3218.314
+      ]
+    },
+    {
+      "id": "main_z004_single",
+      "kind": "column",
+      "bbox": [
+        80.24886,
+        224.41531,
+        919.55581,
+        400.93606
+      ],
+      "parent_id": "main_z004",
+      "bbox_pixels": [
+        391.775,
+        1801.382,
+        4489.271,
+        3218.314
+      ]
+    },
+    {
+      "id": "main_z005",
+      "kind": "zone",
+      "bbox": [
+        452.17619,
+        424.71299,
+        551.052,
+        445.00364
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        2207.524,
+        3409.171,
+        2690.236,
+        3572.044
+      ]
+    },
+    {
+      "id": "main_z006",
+      "kind": "zone",
+      "bbox": [
+        2.51286,
+        455.67185,
+        994.62721,
+        961.39683
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        12.268,
+        3657.678,
+        4855.77,
+        7717.132
+      ]
+    },
+    {
+      "id": "main_z006_right",
+      "kind": "column",
+      "bbox": [
+        513.86946,
+        457.53069,
+        994.62721,
+        961.39683
+      ],
+      "parent_id": "main_z006",
+      "bbox_pixels": [
+        2508.711,
+        3672.599,
+        4855.77,
+        7717.132
+      ]
+    },
+    {
+      "id": "main_z006_left",
+      "kind": "column",
+      "bbox": [
+        2.51286,
+        455.67185,
+        483.01182,
+        959.90802
+      ],
+      "parent_id": "main_z006",
+      "bbox_pixels": [
+        12.268,
+        3657.678,
+        2358.064,
+        7705.182
+      ]
+    }
+  ],
+  "reading_order": {
+    "auxiliary": [
+      "r0007"
+    ],
+    "header": [
+      "r0003",
+      "r0005",
+      "r0004"
+    ],
+    "main": [
+      "r0001",
+      "r0015",
+      "r0012",
+      "r0013",
+      "r0010",
+      "r0002",
+      "r0011",
+      "r0009",
+      "r0006"
+    ],
+    "page_number": [
+      "r0008"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "source_pdf_page_1based": 33,
+  "otzar_id": "698274",
+  "work_ids": [
+    "W02589"
+  ],
+  "source_pdf_sha256": "a139b58cf044bbf01abeb9828940a2f3e9eb956a75ddd27d6769120cbdff6c10",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/predictions.json",
+    "proposal_sha256": "20aadb40242676d2037b8d7e26b18b91c65d68e667767150c1c47291b6c8522e",
+    "original_allocation": "setup",
+    "purpose": "Check spanning headings and column restart; question and answer may belong to one responsum."
+  }
+}

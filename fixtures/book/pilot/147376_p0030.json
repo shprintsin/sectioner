@@ -1,0 +1,564 @@
+{
+  "page_id": "147376_p0030",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/147376/147376_p0030.png",
+    "sha256": "9f21287ee5a3e6ad38736b3e3712ddc90955a73124b0644df1c0173ac90afe14",
+    "kind": "image"
+  },
+  "review_flags": [
+    "near_identical_same_role_proposals_removed"
+  ],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/147376/147376_p0030.png",
+  "image_sha256": "9f21287ee5a3e6ad38736b3e3712ddc90955a73124b0644df1c0173ac90afe14",
+  "width": 2800,
+  "height": 4080,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/147376_p0030.png",
+  "render_image_sha256": "eee69f99fe7f6fe6dd1caf1130b8d7c0b78e0fad729c3ad5e8c64e19b525ab5c",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 1.7289,
+  "regions": [
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.982094,
+      "bbox": [
+        702.37989,
+        0.0,
+        804.90897,
+        22.7849
+      ],
+      "bbox_pixels": [
+        1966.664,
+        0.0,
+        2253.745,
+        92.962
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.982094,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0002",
+      "role": "running_header",
+      "confidence": 0.987588,
+      "bbox": [
+        161.74226,
+        0.0,
+        323.43848,
+        26.57016
+      ],
+      "bbox_pixels": [
+        452.878,
+        0.0,
+        905.628,
+        108.406
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.987588,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0005",
+      "role": "page_number",
+      "confidence": 0.945344,
+      "bbox": [
+        956.01048,
+        0.00948,
+        999.11272,
+        19.9797
+      ],
+      "bbox_pixels": [
+        2676.829,
+        0.039,
+        2797.516,
+        81.517
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "page_number",
+      "detector_role": "page_number",
+      "detector_confidence": 0.945344,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0006",
+      "role": "running_header",
+      "confidence": 0.882985,
+      "bbox": [
+        408.54915,
+        1.28751,
+        580.5225,
+        24.82671
+      ],
+      "bbox_pixels": [
+        1143.938,
+        5.253,
+        1625.463,
+        101.293
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "stream_id": "header",
+      "detector_role": "running_header",
+      "detector_confidence": 0.882985,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0007",
+      "role": "main_text",
+      "confidence": 0.807085,
+      "bbox": [
+        0.0,
+        37.75074,
+        484.52994,
+        867.76883
+      ],
+      "bbox_pixels": [
+        0.0,
+        154.023,
+        1356.684,
+        3540.497
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.807085,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0004",
+      "role": "main_text",
+      "confidence": 0.962766,
+      "bbox": [
+        516.14502,
+        725.12943,
+        1000.0,
+        865.13277
+      ],
+      "bbox_pixels": [
+        1445.206,
+        2958.528,
+        2800.0,
+        3529.742
+      ],
+      "review_flags": [],
+      "container_id": "main_z001_right",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.962766,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.421711,
+      "bbox": [
+        1.75017,
+        877.25154,
+        485.13188,
+        947.91326
+      ],
+      "bbox_pixels": [
+        4.9,
+        3579.186,
+        1358.369,
+        3867.486
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "main_z001_left",
+      "stream_id": "main",
+      "detector_role": "main_text",
+      "detector_confidence": 0.421711,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    },
+    {
+      "id": "r0001",
+      "role": "auxiliary_text",
+      "confidence": 0.99443,
+      "bbox": [
+        466.14951,
+        984.72021,
+        1000.0,
+        999.99354
+      ],
+      "bbox_pixels": [
+        1305.219,
+        4017.658,
+        2800.0,
+        4079.974
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001",
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.99443,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Find missing main-text blocks and repair reading order."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "footnote",
+      "confidence": 0.99443,
+      "bbox": [
+        466.14951,
+        984.72021,
+        1000.0,
+        999.99354
+      ],
+      "bbox_pixels": [
+        1305.219,
+        4017.658,
+        2800.0,
+        4079.974
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "running_header",
+      "confidence": 0.987588,
+      "bbox": [
+        161.74226,
+        0.0,
+        323.43848,
+        26.57016
+      ],
+      "bbox_pixels": [
+        452.878,
+        0.0,
+        905.628,
+        108.406
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0003",
+      "role": "running_header",
+      "confidence": 0.982094,
+      "bbox": [
+        702.37989,
+        0.0,
+        804.90897,
+        22.7849
+      ],
+      "bbox_pixels": [
+        1966.664,
+        0.0,
+        2253.745,
+        92.962
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "main_text",
+      "confidence": 0.962766,
+      "bbox": [
+        516.14502,
+        725.12943,
+        1000.0,
+        865.13277
+      ],
+      "bbox_pixels": [
+        1445.206,
+        2958.528,
+        2800.0,
+        3529.742
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0005",
+      "role": "page_number",
+      "confidence": 0.945344,
+      "bbox": [
+        956.01048,
+        0.00948,
+        999.11272,
+        19.9797
+      ],
+      "bbox_pixels": [
+        2676.829,
+        0.039,
+        2797.516,
+        81.517
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0006",
+      "role": "running_header",
+      "confidence": 0.882985,
+      "bbox": [
+        408.54915,
+        1.28751,
+        580.5225,
+        24.82671
+      ],
+      "bbox_pixels": [
+        1143.938,
+        5.253,
+        1625.463,
+        101.293
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0007",
+      "role": "main_text",
+      "confidence": 0.807085,
+      "bbox": [
+        0.0,
+        37.75074,
+        484.52994,
+        867.76883
+      ],
+      "bbox_pixels": [
+        0.0,
+        154.023,
+        1356.684,
+        3540.497
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0008",
+      "role": "main_text",
+      "confidence": 0.421711,
+      "bbox": [
+        1.75017,
+        877.25154,
+        485.13188,
+        947.91326
+      ],
+      "bbox_pixels": [
+        4.9,
+        3579.186,
+        1358.369,
+        3867.486
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0009",
+      "role": "running_header",
+      "confidence": 0.306029,
+      "bbox": [
+        409.27734,
+        1.43612,
+        579.66775,
+        25.00125
+      ],
+      "bbox_pixels": [
+        1145.977,
+        5.859,
+        1623.07,
+        102.005
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "53e711978b7f31d383ff368a37659a6582f963c144f1786d373f35552c2010a0",
+    "input_count": 9,
+    "retained_count": 8,
+    "removed_ids": [
+      "r0009"
+    ],
+    "decisions": [
+      {
+        "removed_id": "r0009",
+        "retained_id": "r0006",
+        "role": "running_header",
+        "iou": 0.9773599596526797,
+        "removed_confidence": 0.306029,
+        "retained_confidence": 0.882985,
+        "reason": "same_role_iou_at_least_fixed_threshold"
+      }
+    ],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "requires_review": true,
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "footnotes_z001",
+      "kind": "zone",
+      "bbox": [
+        466.14951,
+        984.72021,
+        1000.0,
+        999.99354
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        1305.219,
+        4017.658,
+        2800.0,
+        4079.974
+      ]
+    },
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        0.0,
+        37.75074,
+        1000.0,
+        947.91326
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        0.0,
+        154.023,
+        2800.0,
+        3867.486
+      ]
+    },
+    {
+      "id": "main_z001_right",
+      "kind": "column",
+      "bbox": [
+        516.14502,
+        725.12943,
+        1000.0,
+        865.13277
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        1445.206,
+        2958.528,
+        2800.0,
+        3529.742
+      ]
+    },
+    {
+      "id": "main_z001_left",
+      "kind": "column",
+      "bbox": [
+        0.0,
+        37.75074,
+        485.13188,
+        947.91326
+      ],
+      "parent_id": "main_z001",
+      "bbox_pixels": [
+        0.0,
+        154.023,
+        1358.369,
+        3867.486
+      ]
+    }
+  ],
+  "reading_order": {
+    "auxiliary": [
+      "r0001"
+    ],
+    "header": [
+      "r0003",
+      "r0006",
+      "r0002"
+    ],
+    "main": [
+      "r0004",
+      "r0007",
+      "r0008"
+    ],
+    "page_number": [
+      "r0005"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "source_pdf_page_1based": 30,
+  "otzar_id": "147376",
+  "work_ids": [
+    "W01271"
+  ],
+  "source_pdf_sha256": "361a23d234e3f7ac304e0afaadfba6722380e7e3528a3f74e63a50ad2afa568d",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/predictions.json",
+    "proposal_sha256": "20aadb40242676d2037b8d7e26b18b91c65d68e667767150c1c47291b6c8522e",
+    "original_allocation": "evaluation",
+    "purpose": "Find missing main-text blocks and repair reading order."
+  }
+}

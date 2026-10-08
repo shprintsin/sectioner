@@ -1,0 +1,15 @@
+{"doc":"letter-001","tag":"place","quote":"Vilna","confidence":0.97}
+{"doc":"letter-001","tag":"date","quote":"3 March 1887","attrs":{"when":"1887-03-03"},"confidence":0.95}
+{"doc":"letter-001","tag":"person","quote":"Samuel Levin","confidence":0.93}
+{"doc":"letter-001","tag":"place","quote":"Warsaw","confidence":0.96}
+{"doc":"letter-001","tag":"org","quote":"Reading Society","confidence":0.71}
+{"doc":"letter-001","tag":"place","quote":"Kovno","confidence":0.88}
+{"doc":"letter-001","tag":"measure","quote":"four roubles","attrs":{"quantity":4,"unit":"rouble"},"confidence":0.8}
+{"doc":"letter-002","tag":"place","quote":"Warsaw","nth":1,"confidence":0.97}
+{"doc":"letter-002","tag":"person","quote":"Jacob Abramson","confidence":0.94}
+{"doc":"letter-002","tag":"person","quote":"Mr. Lewin","confidence":0.62}
+{"doc":"letter-002","tag":"place","quote":"Nalewki Street","confidence":0.55}
+{"doc":"letter-003","tag":"place","quote":"וילנא","confidence":0.9}
+{"doc":"letter-003","tag":"date","quote":"יום ג' ניסן תרמ\"ז","attrs":{"when":"1887-03-28"},"confidence":0.7}
+{"doc":"letter-003","tag":"person","quote":"ר' משה כהן","confidence":0.85}
+{"doc":"letter-003","tag":"place","quote":"קובנא","confidence":0.92}

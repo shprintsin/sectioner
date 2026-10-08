@@ -1,0 +1,58 @@
+{
+  "worksets": [
+    {
+      "id": "example-pages",
+      "label": "Example · society minutes (3 synthetic pages)",
+      "kind": "book",
+      "root": "examples/pages",
+      "files": { "image": "{id}.png" }
+    },
+    {
+      "id": "example-letters",
+      "label": "Example · letters (2 English, 1 Hebrew)",
+      "kind": "text",
+      "root": "examples/letters",
+      "files": { "text": "{id}.txt", "proposal": "proposals.jsonl" }
+    }
+  ],
+  "projects": [
+    {
+      "id": "example-page-regions",
+      "label": "Example · page regions",
+      "kind": "book",
+      "description": "Draw a box around each part of the page and give it a tag.",
+      "worksets": ["example-pages"],
+      "tags": [
+        { "id": "title", "label": "Heading", "base": "title", "icon": "heading", "key": "H" },
+        { "id": "main_text", "label": "Body text", "base": "main_text", "icon": "paragraph", "key": "M" },
+        { "id": "table", "label": "Table", "base": "table", "icon": "table", "key": "9" },
+        { "id": "signature", "label": "Signature", "base": "signature", "icon": "signature", "key": "I" },
+        { "id": "stamp", "label": "Stamp", "base": "figure", "icon": "stamp", "hue": 25, "chroma": 0.16, "key": "7", "description": "a seal or rubber stamp" },
+        { "id": "page_number", "label": "Page number", "base": "page_number", "icon": "hash", "key": "N" },
+        { "id": "date", "label": "Date line", "base": "date", "icon": "calendar", "key": "0" }
+      ],
+      "keymap": {}
+    },
+    {
+      "id": "example-letters",
+      "label": "Example · names in letters",
+      "kind": "text",
+      "description": "Tag people, places, organizations, dates and sums; review the machine's proposals.",
+      "direction": "auto",
+      "worksets": ["example-letters"],
+      "tags": [
+        { "id": "person", "label": "Person", "base": "persName", "key": "P" },
+        { "id": "place", "label": "Place", "base": "placeName", "key": "L" },
+        { "id": "org", "label": "Organization", "base": "orgName", "key": "O" },
+        { "id": "date", "label": "Date", "base": "date", "key": "D",
+          "attrs": [{ "id": "when", "kind": "text", "label": "ISO date (YYYY-MM-DD)", "tei": "@when" }] },
+        { "id": "measure", "label": "Sum / measure", "base": "measure", "key": "M",
+          "attrs": [{ "id": "quantity", "kind": "number", "label": "quantity", "tei": "@quantity" },
+                    { "id": "unit", "kind": "text", "label": "unit", "tei": "@unit" }] },
+        { "id": "doctype", "label": "Letter type", "base": "classCode", "scope": "document",
+          "attrs": [{ "id": "value", "kind": "enum", "label": "type", "tei": "@scheme", "values": ["order", "reply", "personal", "other"] }] }
+      ],
+      "keymap": {}
+    }
+  ]
+}

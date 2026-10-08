@@ -1,0 +1,725 @@
+{
+  "page_id": "646759_p0033",
+  "source": {
+    "path": "harmonized/output/otzar_layout_model/recovery_cohort_v1/646759/646759_p0033.png",
+    "sha256": "c873f3c34c6d1e1476bdaee60e20f537e6b5e4e96ad2705e3bbd6ea05e630be3",
+    "kind": "image"
+  },
+  "review_flags": [],
+  "image": "harmonized/output/otzar_layout_model/recovery_cohort_v1/646759/646759_p0033.png",
+  "image_sha256": "c873f3c34c6d1e1476bdaee60e20f537e6b5e4e96ad2705e3bbd6ea05e630be3",
+  "width": 2216,
+  "height": 3429,
+  "render_image": "harmonized/output/otzar_layout_model/recovery_pilot4_v11_predictions/images/646759_p0033.png",
+  "render_image_sha256": "e9945596b458570e339e6c52e7a534701b9ce089fb168d2bc237b5040ee61914",
+  "bbox_coordinate_system": "xyxy_0_1000",
+  "detector_seconds": 2.249,
+  "regions": [
+    {
+      "id": "r0001",
+      "role": "running_header",
+      "confidence": 0.980075,
+      "bbox": [
+        330.27131,
+        0.57367,
+        668.37396,
+        29.66396
+      ],
+      "bbox_pixels": [
+        731.881,
+        1.967,
+        1481.117,
+        101.718
+      ],
+      "review_flags": [],
+      "container_id": null,
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.0009486607142857143,
+        "main_text": 0.0,
+        "page_number": 0.001171875,
+        "running_header": 0.9640252976190476,
+        "separator": 0.001953125,
+        "title": 0.031901041666666664
+      },
+      "semantic_confidence": 0.9640252976190476,
+      "stream_id": "header",
+      "detector_role": "title",
+      "detector_confidence": 0.980075,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0008",
+      "role": "unknown",
+      "confidence": 0.276615,
+      "bbox": [
+        0.0,
+        58.95117,
+        996.61894,
+        241.97504
+      ],
+      "bbox_pixels": [
+        0.0,
+        202.144,
+        2208.508,
+        829.732
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": null,
+      "detector_role_before_calibration": "commentary",
+      "semantic_abstention_reason": "detector_role_absent_from_reviewed_setup",
+      "semantic_votes": {
+        "footnote": 0.012081473214285713,
+        "main_text": 0.9780226934523808,
+        "page_number": 0.005729166666666667,
+        "running_header": 0.0,
+        "separator": 0.0,
+        "title": 0.004166666666666667
+      },
+      "semantic_confidence": 0.9780226934523808,
+      "stream_id": "aux_unknown",
+      "detector_role": "commentary",
+      "detector_confidence": 0.276615,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0003",
+      "role": "title",
+      "confidence": 0.902957,
+      "bbox": [
+        456.9487,
+        283.40481,
+        544.43034,
+        304.42385
+      ],
+      "bbox_pixels": [
+        1012.598,
+        971.795,
+        1206.458,
+        1043.869
+      ],
+      "review_flags": [],
+      "container_id": "main_z001",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.014341517857142855,
+        "main_text": 0.003125,
+        "page_number": 0.02864583333333333,
+        "running_header": 0.008463541666666666,
+        "separator": 0.001953125,
+        "title": 0.9434709821428573
+      },
+      "semantic_confidence": 0.9434709821428573,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.902957,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0002",
+      "role": "title",
+      "confidence": 0.954312,
+      "bbox": [
+        216.47867,
+        313.63694,
+        782.95998,
+        336.16427
+      ],
+      "bbox_pixels": [
+        479.717,
+        1075.461,
+        1735.039,
+        1152.707
+      ],
+      "review_flags": [],
+      "container_id": "main_z002",
+      "detector_role_before_calibration": "title",
+      "semantic_votes": {
+        "footnote": 0.011607142857142856,
+        "main_text": 0.015885416666666666,
+        "page_number": 0.03177083333333333,
+        "running_header": 0.024088541666666664,
+        "separator": 0.0026041666666666665,
+        "title": 0.9140438988095237
+      },
+      "semantic_confidence": 0.9140438988095237,
+      "stream_id": "main",
+      "detector_role": "title",
+      "detector_confidence": 0.954312,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "ink_recovery_0001",
+      "role": "main_text",
+      "bbox": [
+        4.9639,
+        378.82765,
+        995.0361,
+        711.28609
+      ],
+      "bbox_pixels": [
+        11.0,
+        1299.0,
+        2205.0,
+        2439.0
+      ],
+      "confidence": 0.77,
+      "source": "ink_geometry",
+      "provenance": {
+        "method": "row_bands",
+        "mode": "one_column",
+        "ink_pixels": 352758,
+        "line_bands": 11
+      },
+      "evidence": {
+        "label_status": "unknown",
+        "pixels_are_evidence_not_truth": true
+      },
+      "detector_role_before_calibration": "unknown",
+      "semantic_votes": {
+        "footnote": 0.032589285714285716,
+        "main_text": 0.9601190476190474,
+        "page_number": 0.005729166666666667,
+        "running_header": 0.0,
+        "separator": 0.0,
+        "title": 0.0015625
+      },
+      "semantic_confidence": 0.9601190476190474,
+      "container_id": "main_z003_single",
+      "stream_id": "main",
+      "detector_role": "unknown",
+      "detector_confidence": 0.77,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0007",
+      "role": "separator",
+      "confidence": 0.294072,
+      "bbox": [
+        564.23801,
+        749.4114,
+        997.13509,
+        758.54805
+      ],
+      "bbox_pixels": [
+        1250.351,
+        2569.732,
+        2209.651,
+        2601.061
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": null,
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.026925223214285716,
+        "main_text": 0.00390625,
+        "page_number": 0.005208333333333333,
+        "running_header": 0.005859375,
+        "separator": 0.9294549851190477,
+        "title": 0.028645833333333336
+      },
+      "semantic_confidence": 0.9294549851190477,
+      "stream_id": null,
+      "detector_role": "footnote",
+      "detector_confidence": 0.294072,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0005",
+      "role": "separator",
+      "confidence": 0.499106,
+      "bbox": [
+        565.66259,
+        749.96319,
+        993.80163,
+        757.57648
+      ],
+      "bbox_pixels": [
+        1253.508,
+        2571.624,
+        2202.264,
+        2597.73
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": null,
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.003487723214285714,
+        "main_text": 0.0,
+        "page_number": 0.0013020833333333333,
+        "running_header": 0.001953125,
+        "separator": 0.9646112351190477,
+        "title": 0.028645833333333336
+      },
+      "semantic_confidence": 0.9646112351190477,
+      "stream_id": null,
+      "detector_role": "footnote",
+      "detector_confidence": 0.499106,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0004",
+      "role": "auxiliary_text",
+      "confidence": 0.902714,
+      "bbox": [
+        1.53888,
+        763.08819,
+        998.78249,
+        855.44283
+      ],
+      "bbox_pixels": [
+        3.41,
+        2616.629,
+        2213.302,
+        2933.313
+      ],
+      "review_flags": [],
+      "container_id": "footnotes_z001_single",
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.964341517857143,
+        "main_text": 0.01900111607142857,
+        "page_number": 0.00234375,
+        "running_header": 0.0033482142857142855,
+        "separator": 0.006277901785714286,
+        "title": 0.0046875
+      },
+      "semantic_confidence": 0.964341517857143,
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.902714,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    },
+    {
+      "id": "r0006",
+      "role": "auxiliary_text",
+      "confidence": 0.398276,
+      "bbox": [
+        1.47723,
+        858.59003,
+        994.36714,
+        998.09771
+      ],
+      "bbox_pixels": [
+        3.274,
+        2944.105,
+        2203.518,
+        3422.477
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ],
+      "container_id": "footnotes_z001_single",
+      "detector_role_before_calibration": "footnote",
+      "semantic_votes": {
+        "footnote": 0.8575613839285714,
+        "main_text": 0.05424107142857142,
+        "page_number": 0.07901785714285715,
+        "running_header": 0.0,
+        "separator": 0.0,
+        "title": 0.0091796875
+      },
+      "semantic_confidence": 0.8575613839285714,
+      "stream_id": "auxiliary",
+      "detector_role": "footnote",
+      "detector_confidence": 0.398276,
+      "verified": false,
+      "responsum_id": null,
+      "responsum_boundary": "unknown",
+      "basis": "Machine proposal; check against the page. Check recovered main-text geometry and visible continuation/start boundaries."
+    }
+  ],
+  "detector_proposals_before_deduplication": [
+    {
+      "id": "r0001",
+      "role": "title",
+      "confidence": 0.980075,
+      "bbox": [
+        330.27131,
+        0.57367,
+        668.37396,
+        29.66396
+      ],
+      "bbox_pixels": [
+        731.881,
+        1.967,
+        1481.117,
+        101.718
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0002",
+      "role": "title",
+      "confidence": 0.954312,
+      "bbox": [
+        216.47867,
+        313.63694,
+        782.95998,
+        336.16427
+      ],
+      "bbox_pixels": [
+        479.717,
+        1075.461,
+        1735.039,
+        1152.707
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0003",
+      "role": "title",
+      "confidence": 0.902957,
+      "bbox": [
+        456.9487,
+        283.40481,
+        544.43034,
+        304.42385
+      ],
+      "bbox_pixels": [
+        1012.598,
+        971.795,
+        1206.458,
+        1043.869
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0004",
+      "role": "footnote",
+      "confidence": 0.902714,
+      "bbox": [
+        1.53888,
+        763.08819,
+        998.78249,
+        855.44283
+      ],
+      "bbox_pixels": [
+        3.41,
+        2616.629,
+        2213.302,
+        2933.313
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "r0005",
+      "role": "footnote",
+      "confidence": 0.499106,
+      "bbox": [
+        565.66259,
+        749.96319,
+        993.80163,
+        757.57648
+      ],
+      "bbox_pixels": [
+        1253.508,
+        2571.624,
+        2202.264,
+        2597.73
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0006",
+      "role": "footnote",
+      "confidence": 0.398276,
+      "bbox": [
+        1.47723,
+        858.59003,
+        994.36714,
+        998.09771
+      ],
+      "bbox_pixels": [
+        3.274,
+        2944.105,
+        2203.518,
+        3422.477
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0007",
+      "role": "footnote",
+      "confidence": 0.294072,
+      "bbox": [
+        564.23801,
+        749.4114,
+        997.13509,
+        758.54805
+      ],
+      "bbox_pixels": [
+        1250.351,
+        2569.732,
+        2209.651,
+        2601.061
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    },
+    {
+      "id": "r0008",
+      "role": "commentary",
+      "confidence": 0.276615,
+      "bbox": [
+        0.0,
+        58.95117,
+        996.61894,
+        241.97504
+      ],
+      "bbox_pixels": [
+        0.0,
+        202.144,
+        2208.508,
+        829.732
+      ],
+      "review_flags": [
+        "low_role_confidence"
+      ]
+    }
+  ],
+  "deduplication": {
+    "version": "0.1.0",
+    "iou_threshold": 0.95,
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "method": "greedy_same_role_highest_confidence_then_role_bbox_id",
+    "input_proposals_sha256": "c6bd018a8b7c151ac68ec02dfd36bd9d1cb60325d6f7dda88c745f5e7a48500d",
+    "input_count": 8,
+    "retained_count": 8,
+    "removed_ids": [],
+    "decisions": [],
+    "ground_truth_used": false,
+    "proposal_scope": "supplied_prediction_regions_not_pre_NMS_logits"
+  },
+  "schema_version": "0.1",
+  "containers": [
+    {
+      "id": "footnotes_z001",
+      "kind": "zone",
+      "bbox": [
+        1.47723,
+        763.08819,
+        998.78249,
+        998.09771
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        3.274,
+        2616.629,
+        2213.302,
+        3422.477
+      ]
+    },
+    {
+      "id": "footnotes_z001_single",
+      "kind": "column",
+      "bbox": [
+        1.47723,
+        763.08819,
+        998.78249,
+        998.09771
+      ],
+      "parent_id": "footnotes_z001",
+      "bbox_pixels": [
+        3.274,
+        2616.629,
+        2213.302,
+        3422.477
+      ]
+    },
+    {
+      "id": "main_z001",
+      "kind": "zone",
+      "bbox": [
+        456.9487,
+        283.40481,
+        544.43034,
+        304.42385
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        1012.598,
+        971.795,
+        1206.458,
+        1043.869
+      ]
+    },
+    {
+      "id": "main_z002",
+      "kind": "zone",
+      "bbox": [
+        216.47867,
+        313.63694,
+        782.95998,
+        336.16427
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        479.717,
+        1075.461,
+        1735.039,
+        1152.707
+      ]
+    },
+    {
+      "id": "main_z003",
+      "kind": "zone",
+      "bbox": [
+        4.9639,
+        378.82765,
+        995.0361,
+        711.28609
+      ],
+      "parent_id": null,
+      "bbox_pixels": [
+        11.0,
+        1299.0,
+        2205.0,
+        2439.0
+      ]
+    },
+    {
+      "id": "main_z003_single",
+      "kind": "column",
+      "bbox": [
+        4.9639,
+        378.82765,
+        995.0361,
+        711.28609
+      ],
+      "parent_id": "main_z003",
+      "bbox_pixels": [
+        11.0,
+        1299.0,
+        2205.0,
+        2439.0
+      ]
+    }
+  ],
+  "reading_order": {
+    "aux_unknown": [
+      "r0008"
+    ],
+    "auxiliary": [
+      "r0004",
+      "r0006"
+    ],
+    "header": [
+      "r0001"
+    ],
+    "main": [
+      "r0003",
+      "r0002",
+      "ink_recovery_0001"
+    ]
+  },
+  "relations": [],
+  "structure_review_flags": [],
+  "structure_provenance": {
+    "algorithm": "geometric_local_rtl",
+    "version": "0.3.0",
+    "inputs": [
+      "predicted_role",
+      "normalized_bbox"
+    ],
+    "uses_book_identity": false,
+    "uses_reference_structure": false,
+    "row_parameters": {
+      "maximum_height": 25.0,
+      "minimum_width_to_height": 2.0,
+      "minimum_overlap_over_larger_height": 0.8,
+      "horizontal_overlap_allowed": 0.0,
+      "same_predicted_role": true,
+      "require_column": true,
+      "complete_link_row": true
+    }
+  },
+  "uncertainties": [],
+  "structure_row_order_audit": [],
+  "cross_role_conflicts": {
+    "version": "0.1.0",
+    "mode": "review_only",
+    "iou_threshold": 0.95,
+    "threshold_basis": "Existing fixed near-identical proposal IoU threshold; review only, not tuned using ground truth.",
+    "coordinate_space": "normalized_xyxy_0_1000",
+    "winner_selected": false,
+    "ground_truth_used": false,
+    "conflict_count": 0,
+    "affected_region_ids": [],
+    "conflicts": []
+  },
+  "requires_review": true,
+  "geometry_recovery": {
+    "enabled": true,
+    "mode": "one_column",
+    "source": "page_pixels",
+    "proposals": 1,
+    "separator_review": [],
+    "hypothesis": "clean one-column text rows can recover omitted body geometry while true horizontal rules remain rules",
+    "confidence_is_recovery_evidence": true
+  },
+  "book_calibration": {
+    "book_id": "edition:646759",
+    "model_sha256": "c41397814da97254fdee932952994ebb31c5e17de667a72c5b3b42fce19997c0",
+    "source_image_sha256": "c873f3c34c6d1e1476bdaee60e20f537e6b5e4e96ad2705e3bbd6ea05e630be3",
+    "unsupported_roles": [
+      "commentary",
+      "unknown"
+    ],
+    "calibration_page_overlap": true,
+    "requires_review": true,
+    "confidence_interpretation": "Uncalibrated tree votes; not a correctness guarantee.",
+    "abstention_policy": "An unsupported detector role becomes unknown. Geometry-only proposals may receive a supported role at tree vote >=0.7; this threshold is experimental."
+  },
+  "review_required": true,
+  "source_pdf_page_1based": 33,
+  "otzar_id": "646759",
+  "work_ids": [
+    "W01914"
+  ],
+  "source_pdf_sha256": "b3307e169ecf2b84b425e9088e02fbd1001ed8d98da5079f5e402127abab625e",
+  "annotation_status": "unreviewed_proposal",
+  "annotation_profile": "blocks_responsa_v1",
+  "provenance": {
+    "reviewed_by_human": false,
+    "proposal_file": "harmonized/output/otzar_layout_model/recovery_pipeline_one_column_v2/layout.json",
+    "proposal_sha256": "9074acaeac45f46595d081640bb625b43cf99c89d15e80091d76bb8d8725e5eb",
+    "original_allocation": "setup",
+    "purpose": "Check recovered main-text geometry and visible continuation/start boundaries."
+  }
+}
