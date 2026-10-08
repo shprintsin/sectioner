@@ -39,6 +39,9 @@ export interface TextProjectData {
   direction: "rtl" | "ltr";
   /** Problems found while loading — a bad line, a proposal that could not be placed. */
   errors: string[];
+  /** Per proposals file: how many lines were offered as new suggestions, and how many
+   *  were already decided (the same tag on the same span is in the saved annotations). */
+  proposals: { workset: string; file: string; lines: number; offered: number; failed: number }[];
 }
 
 interface Loaded {
@@ -103,6 +106,7 @@ export async function loadTextProject(id: string): Promise<TextProjectData | nul
   const anns: Ann[] = [];
   const done: Record<string, boolean> = {};
   const ids = new Set<string>();
+  const proposals: TextProjectData["proposals"] = [];
   for (const { w, sections } of sets) {
     const docs = new Set(sections.map((s) => s.doc_id));
     // saved annotations
@@ -129,6 +133,7 @@ export async function loadTextProject(id: string): Promise<TextProjectData | nul
         const r = resolveProposals(records, byDoc, tags, anns, `agent:${basename(proposalTemplate).replace(/\.jsonl?$/i, "")}`, seedCounter(anns));
         for (const e of [...perr, ...r.errors]) errors.push(`${w.id}/${basename(proposalTemplate)} ${e}`);
         anns.push(...r.anns);
+        proposals.push({ workset: w.id, file: proposalTemplate, lines: records.length + perr.length, offered: r.anns.length, failed: perr.length + r.errors.length });
       }
     }
     const index = await readIndex(w);
@@ -161,7 +166,7 @@ export async function loadTextProject(id: string): Promise<TextProjectData | nul
     volumes,
   };
   const direction = resolveDirection(def.direction, volumes.flatMap((v) => v.sections.slice(0, 20).map((s) => s.text)));
-  return { def, project, tags, anns: withParents(anns), done, direction, errors };
+  return { def, project, tags, anns: withParents(anns), done, direction, errors, proposals };
 }
 
 export interface TextSave {

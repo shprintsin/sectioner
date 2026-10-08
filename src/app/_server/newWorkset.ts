@@ -136,3 +136,26 @@ export async function addWorkset(input: NewWorksetInput): Promise<WorksetDef> {
   await writeUtf8(manifestPath(), JSON.stringify(next, null, 2).replaceAll("\n", eol) + trailing);
   return def;
 }
+
+/**
+ * Point an existing working set at a file of one kind (`proposal` is the case that
+ * matters: a model's suggestions added after the set was made). The only edit the
+ * manifest ever takes besides an append: one key of one entry's `files`, never its id or
+ * root. The file is archived first and rewritten in its own formatting.
+ */
+export async function setWorksetFile(id: string, key: FileKey, template: string): Promise<WorksetDef> {
+  const { raw, manifest } = await readManifestRaw();
+  if (raw === null || !manifest) throw new Error("there is no worksets.json yet");
+  const w = manifest.worksets.find((x) => x.id === id);
+  if (!w) throw new Error(`no working set ${id}`);
+  const t = template.replaceAll("\\", "/");
+  if (t.includes("..")) throw new Error("the path may not climb out of the working set's root");
+  w.files = { ...w.files, [key]: t };
+  const sha = createHash("sha256").update(raw).digest("hex").slice(0, 12);
+  const day = new Date().toISOString().slice(0, 10);
+  await writeUtf8(join(sectionerRoot(), "_archive", `worksets.${day}.${sha}.json`), raw);
+  const eol = raw.includes("\r\n") ? "\r\n" : "\n";
+  const trailing = raw.endsWith("\n") ? eol : "";
+  await writeUtf8(manifestPath(), JSON.stringify(manifest, null, 2).replaceAll("\n", eol) + trailing);
+  return w;
+}

@@ -33,6 +33,18 @@ export interface ProposalResult {
   errors: string[];
 }
 
+/** Why a proposal's fields do not fit its tag, or null: an unknown field, a value outside
+ *  an enum's list, a number field that is not a number. */
+export function attrProblem(attrs: AttrValues, tag: TagDef): string | null {
+  for (const [k, v] of Object.entries(attrs)) {
+    const def = tag.attrs.find((a) => a.id === k);
+    if (!def) return `tag ${tag.id} has no field ${k}${tag.attrs.length ? ` (it has ${tag.attrs.map((a) => a.id).join(", ")})` : ""}`;
+    if (def.kind === "enum" && def.values && !def.values.includes(String(v))) return `${k} must be one of ${def.values.join(", ")}, not ${JSON.stringify(v)}`;
+    if (def.kind === "number" && typeof v !== "number") return `${k} must be a number`;
+  }
+  return null;
+}
+
 export function parseProposals(text: string): { records: { line: number; rec: ProposalRecord }[]; errors: string[] } {
   const records: { line: number; rec: ProposalRecord }[] = [];
   const errors: string[] = [];
@@ -70,9 +82,13 @@ export function resolveProposals(
     if (!sec) { errors.push(`line ${line}: no document ${rec.doc} in this project`); continue; }
     const tag = tags.find((t) => t.id === rec.tag);
     if (!tag) { errors.push(`line ${line}: no tag ${rec.tag} in this project`); continue; }
+    const attrs = rec.attrs && typeof rec.attrs === "object" ? rec.attrs : {};
+    const badAttr = attrProblem(attrs, tag);
+    if (badAttr) { errors.push(`line ${line}: ${badAttr}`); continue; }
     let start: number | null = null;
     let end: number | null = null;
     let quote: string | null = null;
+    if (tag.scope === "document" && (rec.quote !== undefined || rec.start !== undefined)) { errors.push(`line ${line}: ${rec.tag} is a document-level tag; give no quote or offsets`); continue; }
     if (tag.scope !== "document") {
       if (typeof rec.start === "number" && typeof rec.end === "number") {
         if (!(rec.start >= 0 && rec.end > rec.start && rec.end <= sec.text.length)) { errors.push(`line ${line}: offsets ${rec.start}-${rec.end} are outside ${rec.doc}`); continue; }
@@ -98,7 +114,7 @@ export function resolveProposals(
       start,
       end,
       quote,
-      attrs: rec.attrs && typeof rec.attrs === "object" ? { ...rec.attrs } : {},
+      attrs: { ...attrs },
       layer,
       origin: layer,
       prov: "agent",

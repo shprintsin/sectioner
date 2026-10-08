@@ -14,6 +14,7 @@
 // The gershayim hazard applies here too: `''` is two characters, and `escapeXml` must not
 // touch an apostrophe in text content. It escapes `&`, `<` and `>` only.
 
+import { SEG_SEP } from "./corpus";
 import { piecesIn } from "./pieces";
 import type { Ann, Project, Section, TagDef } from "./types";
 import { variables } from "./variables";
@@ -51,15 +52,22 @@ export function teiElement(tei: string): string {
  */
 export function teiPredicate(tei: string): string {
   const rest = tei.trim().slice(teiElement(tei).length);
-  const pairs = rest.match(/[\w:.-]+="[^"]*"/g);
-  return pairs ? " " + pairs.join(" ") : "";
+  const pairs: string[] = [...(rest.match(/[\w:.-]+="[^"]*"/g) ?? [])];
+  // The XPath-like form a project config uses: `seg[@type='ruling']`.
+  for (const m of rest.matchAll(/\[@([\w:.-]+)='([^']*)'\]/g)) pairs.push(`${m[1]}="${escapeAttr(m[2])}"`);
+  return pairs.length ? " " + pairs.join(" ") : "";
 }
 
-function attrsOf(a: Ann, t: TagDef): string {
+/** The attributes the standoff `<span>` writes itself; a tag field with one of these names
+ *  goes into a `<note>` inside the span instead of a second, invalid attribute. */
+const SPAN_OWN = new Set(["xml:id", "from", "to", "type", "ana", "resp", "source", "change", "cert", "corresp"]);
+
+function attrsOf(a: Ann, t: TagDef, skip?: Set<string>): string {
   const out: string[] = [];
   for (const def of t.attrs) {
     const v = a.attrs[def.id];
     if (v === undefined || v === "") continue;
+    if (skip?.has(def.tei.slice(1))) continue;
     // `@ana`, `@when`, `@ref` — the tag set says where each attribute lands. Anything
     // that is not an @-attribute (a `bibl`, an `element`) is not expressible here and
     // is carried in the standoff export instead.
@@ -73,7 +81,7 @@ const HEADER = (title: string, version: string, n: number) =>
   `  <teiHeader>
     <fileDesc>
       <titleStmt><title>${escapeXml(title)}</title></titleStmt>
-      <publicationStmt><p>Jewish Responsa Project — TEI Annotation Workbench</p></publicationStmt>
+      <publicationStmt><p>Exported from Sectioner</p></publicationStmt>
       <sourceDesc><p>${n} document${n === 1 ? "" : "s"}</p></sourceDesc>
     </fileDesc>
     <encodingDesc>
@@ -84,6 +92,14 @@ const HEADER = (title: string, version: string, n: number) =>
       </appInfo>
     </encodingDesc>
   </teiHeader>`;
+
+/** Tag fields whose TEI name the standoff `<span>` already uses, as `<note type="name">`. */
+function collidingNotes(a: Ann, t: TagDef): string {
+  return t.attrs
+    .filter((d) => d.tei.startsWith("@") && SPAN_OWN.has(d.tei.slice(1)) && a.attrs[d.id] !== undefined && a.attrs[d.id] !== "")
+    .map((d) => `<note type="${escapeAttr(d.tei.slice(1))}">${escapeXml(String(a.attrs[d.id]))}</note>`)
+    .join("");
+}
 
 /* ── standoff ──────────────────────────────────────────────────────────────────────── */
 
@@ -117,13 +133,14 @@ export function exportStandoff(input: ExportInput): string {
             a.start === null
               ? ' type="document"'
               : ` from="#char${a.start}" to="#char${a.end}"`;
-          const attrs = t ? attrsOf(a, t) : "";
+          const attrs = t ? attrsOf(a, t, SPAN_OWN) : "";
           const quote = a.quote === null ? "" : `<quote>${escapeXml(a.quote)}</quote>`;
+          const notes = t ? collidingNotes(a, t) : "";
           return (
             `        <span xml:id="${escapeAttr(a.id)}"${range} ana="#${escapeAttr(a.tag)}"` +
             ` resp="#${escapeAttr(a.prov)}" source="#${escapeAttr(a.origin)}"` +
             ` change="${escapeAttr(a.status)}"${a.conf === null ? "" : ` cert="${a.conf.toFixed(2)}"`}` +
-            `${attrs} corresp="#${escapeAttr(el)}">${quote}</span>`
+            `${attrs} corresp="#${escapeAttr(el)}">${quote}${notes}</span>`
           );
         })
         .join("\n");
@@ -136,7 +153,7 @@ ${spans}
   const texts = sections
     .map(
       (sec) =>
-        `    <text xml:id="${escapeAttr(sec.doc_id)}"><body><p>${escapeXml(sec.text)}</p></body></text>`,
+        `    <text xml:id="${escapeAttr(sec.doc_id)}"><body><p>${sec.text.split(SEG_SEP).map(escapeXml).join(`</p>${SEG_SEP}<p>`)}</p></body></text>`,
     )
     .join("\n");
 
@@ -222,17 +239,25 @@ export function exportInline(input: ExportInput): InlineResult {
       for (let i = open.length - 1; i >= shared; i--) out += closeTag(open[i]);
       for (let i = shared; i < want.length; i++) out += openTag(want[i]);
       open = want;
-      out += escapeXml(sec.text.slice(p.s, p.e));
+      // A paragraph break becomes `</p><p>` where no element is open across it; inside an
+      // open element it stays as the blank line it is, so the text is never altered.
+      const chunk = escapeXml(sec.text.slice(p.s, p.e));
+      out += open.length ? chunk : chunk.split(SEG_SEP).join(`</p>${SEG_SEP}<p>`);
     }
     for (let i = open.length - 1; i >= 0; i--) out += closeTag(open[i]);
 
-    const docTags = anns
-      .filter((a) => a.doc === sec.doc_id && a.start === null && a.status !== "rejected")
-      .map((a) => ` ana="#${escapeAttr(a.tag)}"`)
+    const docAnns = anns.filter((a) => a.doc === sec.doc_id && a.start === null && a.status !== "rejected");
+    const docTags = docAnns.length ? ` ana="${docAnns.map((a) => "#" + escapeAttr(a.tag)).join(" ")}"` : "";
+    // A document-scope tag's fields: one empty `<note>` per tag at the head of the body.
+    const docNotes = docAnns
+      .map((a) => {
+        const t = byId.get(a.tag);
+        return `<note type="${escapeAttr(a.tag)}"${t ? attrsOf(a, t, new Set(["type"])) : ""}/>`;
+      })
       .join("");
 
     return `    <text xml:id="${escapeAttr(sec.doc_id)}"${docTags}>
-      <body><p>${out}</p></body>
+      <body>${docNotes}<p>${out}</p></body>
     </text>`;
   });
 

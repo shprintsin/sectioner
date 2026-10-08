@@ -129,7 +129,7 @@ const TEXT_LIBRARY: TagDef[] = [
   { id: "title", label: "Title of a work", base: "title", icon: "bookmark", hue: 50, chroma: 0.12, key: "W" },
   { id: "note", label: "Note", base: "note", icon: "comment", hue: 0, chroma: 0.04, key: "" },
   { id: "doctype", label: "Document type", base: "classCode", icon: "folder", hue: 250, chroma: 0.06, key: "", scope: "document",
-    attrs: [{ id: "value", kind: "enum", label: "type", tei: "@scheme", values: ["letter", "report", "other"] }] },
+    attrs: [{ id: "value", kind: "enum", label: "type", tei: "@subtype", values: ["letter", "report", "other"] }] },
 ];
 
 /** Defaults for the fields a person (or agent) may leave out of a tag: an icon, a colour

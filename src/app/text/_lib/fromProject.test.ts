@@ -92,7 +92,7 @@ describe("machine proposals", () => {
     { doc: "d1", tag: "place", quote: "Kovno" },
     { doc: "d2", tag: "place", quote: "Vilna" },
     { doc: "d1", tag: "person", quote: "Vilna" },
-    { doc: "d1", tag: "kind", attrs: { value: "letter" } },
+    { doc: "d1", tag: "kind" },
   ].map((x) => JSON.stringify(x)).join("\n") + "\nnot json\n";
 
   it("places quotes and offsets, reports what it cannot place", () => {
@@ -117,6 +117,28 @@ describe("machine proposals", () => {
     const first = resolveProposals(records, sections, tags, [], "agent:test", 1).anns;
     const rejected = first.map((a) => ({ ...a, status: "rejected" as const }));
     expect(resolveProposals(records, sections, tags, rejected, "agent:test", 10).anns).toEqual([]);
+  });
+
+  it("refuses fields the tag does not have, values outside an enum, and a quote on a document tag", () => {
+    const t2 = teiTags([
+      normalizeTag({ id: "kind", label: "Kind", base: "classCode", scope: "document", attrs: [{ id: "value", kind: "enum", label: "v", tei: "@subtype", values: ["a", "b"] }] }, 0),
+      normalizeTag({ id: "sum", label: "Sum", base: "measure", attrs: [{ id: "n", kind: "number", label: "n", tei: "@quantity" }] }, 1),
+    ]);
+    const lines2 = [
+      { doc: "d1", tag: "kind", attrs: { value: "c" } },
+      { doc: "d1", tag: "kind", attrs: { bogus: "a" } },
+      { doc: "d1", tag: "kind", quote: "Vilna", attrs: { value: "a" } },
+      { doc: "d1", tag: "sum", quote: "1887", attrs: { n: "1887" } },
+      { doc: "d1", tag: "kind", attrs: { value: "b" } },
+    ].map((x) => JSON.stringify(x)).join("\n");
+    const r = resolveProposals(parseProposals(lines2).records, sections, t2, [], "agent:t", 1);
+    expect(r.errors).toEqual([
+      'line 1: value must be one of a, b, not "c"',
+      "line 2: tag kind has no field bogus (it has value)",
+      "line 3: kind is a document-level tag; give no quote or offsets",
+      "line 4: n must be a number",
+    ]);
+    expect(r.anns.map((a) => a.attrs)).toEqual([{ value: "b" }]);
   });
 
   it("refuses offsets whose text is not the quote", () => {

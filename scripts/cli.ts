@@ -20,13 +20,16 @@ usage: npm run sectioner -- <command> [options]
   add-images <folder>           a folder of page images (.png/.jpg) becomes a working set
         --project <id>            add it to this existing project (default: a new project)
         --name <label>            the working set's (and new project's) name
+        --id <id>                 the working set's (and new project's) id (default: from the name)
         --tags "Label=base,…"     the new project's tags; base is a page role (default figure)
   add-texts <folder|file.jsonl> a folder of .txt files, or one JSONL corpus, becomes a working set
-        --project <id> --name <label>
+        --project <id> --name <label> --id <id>
         --tags "Label=element,…"  the new project's tags; element is TEI (default seg)
         --proposals <file.jsonl>  machine proposals to review (inside the same folder)
         --direction rtl|ltr|auto
-  validate                      check projects.json, worksets.json and every working set's files
+  attach-proposals <working set> <file.jsonl>
+                                give a text working set (new) machine proposals to review
+  validate                      check projects.json, worksets.json, every file and every proposal
   status                        progress per project and working set
   export <project> [--out dir]  write a project's results to one folder (default data/export/<id>)
   schema [book|newspaper|text]  print the built-in tags and the allowed bases, as JSON
@@ -98,6 +101,11 @@ async function main() {
 
   async function freeWorksetId(stem: string) {
     const taken = new Set(((await W.readManifest())?.worksets ?? []).map((w) => w.id));
+    if (a.opt.id) {
+      if (!W.SAFE_ID.test(a.opt.id)) die("--id: letters, digits, - _ . only");
+      if (taken.has(a.opt.id)) die(`a working set ${a.opt.id} already exists`);
+      return a.opt.id;
+    }
     let id = slug(stem), n = 2;
     while (taken.has(id)) id = `${slug(stem)}-${n++}`;
     return id;
@@ -115,11 +123,15 @@ async function main() {
       if (k) keys.add(k);
       return k ?? "";
     };
+    const lib = P.tagLibrary(kind);
     return spec.split(",").map((s) => s.trim()).filter(Boolean).map((part, i) => {
-      const [label, base] = part.split("=").map((x) => x.trim());
+      const [label, base0] = part.split("=").map((x) => x.trim());
+      const base = base0 || (kind === "book" ? "figure" : "seg");
       const id = P.slugTag(label, taken);
       taken.push(id);
-      return P.normalizeTag({ id, label, base: base || (kind === "book" ? "figure" : "seg"), key: keyFor(label, i) }, i);
+      // The library's icon and colour for the same base, so a Person looks like one.
+      const like = lib.find((t) => t.base === base);
+      return P.normalizeTag({ id, label, base, key: keyFor(label, i), ...(like ? { icon: like.icon, hue: like.hue, chroma: like.chroma } : {}) }, i);
     });
   }
 
@@ -133,11 +145,13 @@ async function main() {
       await PS.saveProject({ ...p, worksets: [...p.worksets, wsId] });
       return p.id;
     }
-    const id = P.slugProject(label, projects.map((p) => p.id));
+    const id = a.opt.id ?? P.slugProject(label, projects.map((p) => p.id));
+    if (projects.some((p) => p.id === id)) die(`a project ${id} already exists (use --project ${id} to add to it)`);
     const def = { id, label, kind, worksets: [wsId], tags: parseTags(a.opt.tags, kind), keymap: {}, ...(kind === "text" && a.opt.direction ? { direction: a.opt.direction as "rtl" | "ltr" | "auto" } : {}) };
     const errs = P.validateProject(def);
     if (errs.length) die(errs.join("\n       "));
     await PS.saveProject(def);
+    console.log(`tags (id · key → written as): ${def.tags.map((t) => `${t.id} · ${t.key || "—"} → ${t.base}`).join(", ")}`);
     return id;
   }
 
@@ -201,7 +215,8 @@ async function main() {
       const id = await freeWorksetId(label);
       await NW.addWorkset({ id, label, kind: "text", root: rootFor(folder), files });
       const project = await attach(id, "text", label);
-      console.log(`working set ${id} · project ${project}\nopen ${url(`text?project=${project}`)}`);
+      const nDocs = (await W.listPages((await W.findWorkset(id))!)).length;
+      console.log(`working set ${id}: ${nDocs} documents · project ${project}\nopen ${url(`text?project=${project}`)}`);
       return;
     }
 
@@ -226,6 +241,19 @@ async function main() {
         console.log(`added project ${p.id}`);
       }
       console.log(`\nstart the app (npm run dev) and open ${url("")}`);
+      return;
+    }
+
+    case "attach-proposals": {
+      const [wsId, file] = a.pos;
+      if (!wsId || !file) die("usage: attach-proposals <working set> <file.jsonl>");
+      const w = (await W.findWorkset(wsId)) ?? die(`no working set ${wsId}`);
+      if (w.kind !== "text") die(`${wsId} is a ${w.kind} working set; page proposals are per page (docs/formats.md)`);
+      const rel = relative(W.rootDir(w), resolve(file)).split("\\").join("/");
+      if (rel.startsWith("..") || isAbsolute(rel)) die(`the file must be inside the working set's root, ${W.rootDir(w)}`);
+      if (!(await stat(resolve(file)).catch(() => null))) die(`not found: ${file}`);
+      await NW.setWorksetFile(wsId, "proposal", rel);
+      console.log(`${wsId}: proposals ← ${rel} (worksets.json archived first). Now run validate.`);
       return;
     }
 
@@ -266,6 +294,10 @@ async function main() {
       for (const p of (await PS.readProjects().catch(() => [])).filter((x) => x.kind === "text")) {
         const d = await T.loadTextProject(p.id);
         for (const e of d?.errors ?? []) fail(`${p.id}: ${e}`);
+        for (const s of d?.proposals ?? []) {
+          const decided = s.lines - s.offered - s.failed;
+          console.log(`  ${s.failed ? "✗" : "✓"} ${s.workset}: ${s.file} — ${s.lines} lines: ${s.offered} waiting for review, ${decided} already decided${s.failed ? `, ${s.failed} not placed (above)` : ""}`);
+        }
       }
       console.log(bad ? `\n${bad} problem(s)` : "\nall good");
       process.exit(bad ? 1 : 0);
@@ -309,9 +341,10 @@ async function main() {
         const inline = tei.exportInline({ ...input, anns: input.anns.filter((x) => x.status === "accepted") });
         await store.writeUtf8(join(out, "tei-inline.xml"), inline.xml);
         const n = (st: string) => d.anns.filter((x) => x.status === st).length;
-        console.log(`${out}\n  annotations.jsonl  ${d.anns.length} (${n("accepted")} accepted, ${n("proposed")} proposed, ${n("rejected")} rejected)\n  documents.jsonl    ${sections.length} documents (the text every offset counts in)\n  tei-standoff.xml   accepted + proposed\n  tei-inline.xml     accepted${inline.dropped.length ? ` — ${inline.dropped.length} overlapping span(s) left out, see the standoff` : ""}`);
+        console.log(`wrote ${out}\n  annotations.jsonl  ${d.anns.length} (${n("accepted")} accepted, ${n("proposed")} proposed, ${n("rejected")} rejected)\n  documents.jsonl    ${sections.length} documents (the text every offset counts in)\n  tei-standoff.xml   accepted + proposed\n  tei-inline.xml     accepted${inline.dropped.length ? ` — ${inline.dropped.length} overlapping span(s) left out, see the standoff` : ""}`);
       } else {
         let pages = 0;
+        const report: string[] = [];
         for (const wsId of p.worksets) {
           const w = await W.findWorkset(wsId);
           if (!w) continue;
@@ -321,10 +354,10 @@ async function main() {
             if (raw !== null) lines.push(JSON.stringify(JSON.parse(raw)));
           }
           await store.writeUtf8(join(out, `${wsId}.jsonl`), lines.join("\n") + (lines.length ? "\n" : ""));
-          console.log(`  ${wsId}.jsonl  ${lines.length} finished page(s)`);
+          report.push(`  ${wsId}.jsonl  ${lines.length} finished page(s)`);
           pages += lines.length;
         }
-        console.log(`${out}: ${pages} page record(s) — one line per page marked done (or written from the Export dialog)`);
+        console.log(`wrote ${out}\n${report.join("\n")}\n  ${pages} page record(s): one line per page marked done (or written from the Export dialog)`);
       }
       return;
     }

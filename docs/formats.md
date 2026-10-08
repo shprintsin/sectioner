@@ -46,13 +46,28 @@ to the working set's root), one suggestion per line:
 | `confidence` | 0–1, shown to the reviewer |
 | `layer` | names the run; default `agent:<file name without .jsonl>` |
 
-A document-scope tag (`"scope": "document"`) takes no quote or offsets.
+A document-scope tag (`"scope": "document"`) takes no quote or offsets, only `attrs`.
 
-Every line the app cannot place (unknown document or tag, quote not found, offsets out of
-range) is listed in a banner when the project opens, and by `npm run sectioner --
-validate`, with its line number. Nothing is guessed.
+A quote is found as a plain substring: `Levin` matches inside `Levinson`. That is useful
+for Hebrew prefixes (`ברדיטשוב` inside `בברדיטשוב`) but a trap in English, so quote
+enough to be unique.
 
-When the project opens, the proposals are merged into its annotations as `proposed`. The
+These lines are refused, each with its line number:
+- an unknown document or tag;
+- a quote that is not found;
+- offsets out of range, or a `quote` that differs from the text at the offsets;
+- a field the tag does not have, an enum value outside its `values`, or a non-number for
+  a `number` field;
+- a quote or offsets on a document-scope tag.
+
+The app lists them in a banner when the project opens, and `npm run sectioner --
+validate` lists them too, with a count of lines waiting for review and already decided.
+Nothing is guessed.
+
+When the project opens, and whenever `export` runs, the proposals are merged into its
+annotations as `proposed`. They get ids `p<n>`, numbered at load. An id stays fixed only
+once the person's first save has written the proposal into `annotations.jsonl`, so join
+proposals to results on document, tag and span, never on id. The
 reviewer accepts (`Y`) or rejects (`N`) them, and both decisions are saved. A proposal
 whose tag and span already exist in the saved annotations, in any status, is not offered
 again. So the proposals file can be regenerated and re-read at any time without bringing
@@ -97,6 +112,20 @@ on `status == "accepted"` for the gold set.
 | `documents.jsonl` | `{"id", "workset", "title", "text"}`: the text the offsets count in |
 | `tei-standoff.xml` | TEI P5 with the annotations (accepted and proposed) as standoff spans pointing into the text |
 | `tei-inline.xml` | TEI P5 with the accepted annotations as inline elements. XML is a tree, so spans that overlap without nesting cannot all be inline; the command prints how many were left out, and the standoff file has them all. |
+
+Both TEI files write one `<p>` per paragraph. In the inline file, a paragraph break that
+falls inside an annotation stays a blank line within that element: the text is never
+altered to make the tree fit.
+
+A tag's fields become attributes, named by their `tei` value (`"tei": "@when"` →
+`when="1887-03-03"`). A config element with a predicate (`seg[@type='ruling']`) becomes
+`<seg type="ruling">`.
+
+A document-scope tag is written in the standoff file as `<span type="document"
+ana="#<tag>" …fields>`, and in the inline file as `ana="#<tag>"` on the `<text>` plus
+`<note type="<tag>" …fields/>` at the head of its body. A field named `@type` would
+collide with the span's own `type`, so the standoff file writes it as a `<note>` inside
+the span instead. Use `@subtype` or `@n` for a category's value.
 
 The same two TEI exports are in the workbench's File menu.
 

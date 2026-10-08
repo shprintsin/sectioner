@@ -23,10 +23,13 @@ data/_archive/                                 automatic backups of the configur
    `example`) and use that.
 2. **Never edit, regenerate or delete `sessions/` or `output/`.** They are human work. To
    start a page over, ask the person.
-3. **`worksets.json` is append-only.** Add entries; never rename an `id` or delete an
-   entry that has work (hide it with `"hidden": true`). The CLI and the app archive the
-   file before every write; if you edit it by hand, copy it to
-   `_archive/worksets.<date>.json` first.
+3. **Never rename an `id` or delete an entry that has work**, in `worksets.json` or
+   `projects.json`. Sessions and outputs are filed under the ids. To retire a working set,
+   set `"hidden": true` on it. Add working sets with `add-images` / `add-texts`, and attach
+   proposals with `attach-proposals`; these are the only changes `worksets.json` needs.
+   The CLI and the app copy a file to `_archive/<file>.<date>.<sha>.json` before every
+   write. Before editing either file by hand, copy it to
+   `_archive/<file>.<YYYY-MM-DD>.json` yourself.
 4. **Prefer the CLI to hand edits.** It runs the app's own validators. After any hand edit,
    run `npm run sectioner -- validate` and fix everything it reports before telling the
    person it is ready.
@@ -40,11 +43,12 @@ data/_archive/                                 automatic backups of the configur
 Run from the repository folder (`npm install` once).
 
 ```
-npm run sectioner -- init                       create the data folder
+npm run sectioner -- init                       create the data folder (optional: add-* does it)
 npm run sectioner -- example                    two small example projects
-npm run sectioner -- add-images <folder> [--project ID] [--name LABEL] [--tags "Label=base,…"]
-npm run sectioner -- add-texts <folder|corpus.jsonl> [--project ID] [--name LABEL]
+npm run sectioner -- add-images <folder> [--project ID] [--name LABEL] [--id ID] [--tags "Label=base,…"]
+npm run sectioner -- add-texts <folder|corpus.jsonl> [--project ID] [--name LABEL] [--id ID]
                        [--tags "Label=TEIelement,…"] [--proposals FILE] [--direction rtl|ltr|auto]
+npm run sectioner -- attach-proposals <working set> <file.jsonl>
 npm run sectioner -- validate                   exit code 1 if anything is wrong
 npm run sectioner -- status                     progress bars per working set
 npm run sectioner -- export <project> [--out DIR]
@@ -53,6 +57,20 @@ npm run dev                                     the app, http://127.0.0.1:3040
 ```
 
 Every command takes `--data <dir>` to work on a data folder other than `./data`.
+
+**Ids.**
+- `add-*` makes the working set's id, and a new project's, from `--name`: lower-cased,
+  with every run of other characters turned into `-` (`"Merchant letters"` →
+  `merchant-letters`). `--id` sets it instead.
+- A tag's id is its label lower-cased with `_` (`"Sum of money"` → `sum_of_money`).
+- The command prints every tag's id, key and base. You need the tag ids for proposals.
+- Page and document ids are the file names without the extension, or the `id` of each
+  corpus line.
+
+**Material is not copied.** A working set points at your folder where it is. A folder
+inside the data folder is recorded by a relative path, any other by its absolute path. For
+a self-contained data folder (one you can commit, zip or move), put the material under it
+first, e.g. `data/material/letters/`, and add it from there.
 
 ## Recipes
 
@@ -86,10 +104,23 @@ book` lists the icons), then validate.
    kept.
 2. Tags: each is a TEI element (`persName`, `placeName`, `orgName`, `date`, `term`,
    `quote`, `bibl`, `measure`, `foreign`, `title`, or `seg[@type='…']` for anything else).
-   Fields go in `attrs`; a whole-document category uses `"scope": "document"`. Give tags
-   single-letter keys (`P`, `L`), avoiding `c d n p u y` for tags used without a
-   selection.
-3. Run:
+   Fields go in `attrs`. A text tag's key must be a single letter or digit.
+   - A key is read as a tag once text is selected, which is how spans are tagged anyway.
+     So `P` for Person is fine.
+   - With nothing selected, `c d n p u y` run commands instead (compact, done, next,
+     previous, uncertain, accept). A tag that needs no selection, a document-level
+     category, is reached from the palette (`Space`).
+3. A **document-level category** (one value for the whole document):
+   ```json
+   { "id": "category", "label": "Letter type", "base": "classCode", "scope": "document",
+     "attrs": [{ "id": "value", "kind": "enum", "label": "type", "tei": "@subtype",
+                 "values": ["business", "family", "other"] }] }
+   ```
+   Keep `@subtype` (or `@n`) for the value. The standoff export writes the tag as
+   `<span type="document" ana="#category" subtype="business">`, the inline export as
+   `<note type="category" subtype="business"/>` at the head of the document. `@type` is
+   taken by the span itself.
+4. Run:
    ```bash
    npm run sectioner -- add-texts ./letters.jsonl --name "Letters" --tags "Person=persName,Place=placeName,Date=date"
    ```
@@ -100,26 +131,39 @@ book` lists the icons), then validate.
 
 This is where agents help most: you propose, the person reviews (`Y` / `N`).
 
-1. Read the documents the way the app does: export once (`npm run sectioner -- export
-   <project>`) and use `documents.jsonl`. Its `text` is exactly what the annotator sees.
-2. For each span you propose, write one line to a JSONL beside the documents:
+1. Create the project first (`add-texts`, above), so the documents and the tag ids
+   exist.
+2. Read the documents the way the app does: `npm run sectioner -- export <project>`,
+   then read `data/export/<project>/documents.jsonl`. Its `text` is exactly what the
+   annotator sees.
+3. For each span you propose, write one line to a JSONL **inside the working set's
+   folder** (beside the documents):
    ```json
    {"doc": "letter-001", "tag": "person", "quote": "Samuel Levin", "confidence": 0.9}
+   {"doc": "letter-001", "tag": "category", "attrs": {"value": "business"}}
    ```
-   - Copy `quote` **verbatim** from the text. Do not compute offsets. If the phrase occurs
-     more than once and you mean a later one, add `"nth": 2`.
-   - `tag` is a tag **id** of the project; `attrs` uses the tag's field ids.
+   - Copy `quote` **verbatim** from the text, and do not compute offsets. A quote is found
+     as a plain substring, so `Levin` also matches inside `Levinson` (useful for Hebrew
+     prefixes, a trap in English). Quote enough words to be unique, or add `"nth": 2`
+     for a later occurrence.
+   - `tag` is a tag **id** of the project, and `attrs` uses that tag's field ids. An enum
+     value must be one of its `values`, and a `number` field takes a JSON number.
+   - A document-level tag takes no `quote` and no offsets, only `attrs`.
    - Name your run: `"layer": "agent:<model>-<date>"` (default: the file name).
-3. Point the working set at the file: add `"proposal": "proposals.jsonl"` to its `files`
-   in `worksets.json` (the path is relative to the working set's `root`), or pass
-   `--proposals` to `add-texts` when you create it.
-4. Run `npm run sectioner -- validate`. Every line that could not be placed is listed with
-   its line number; fix them.
-5. Tell the person to open the project and press **review**.
+4. Attach it: `npm run sectioner -- attach-proposals <working set> <file.jsonl>`.
+   `add-texts --proposals FILE` does the same at creation.
+5. Run `npm run sectioner -- validate`. It reports, per proposals file, how many lines
+   are waiting for review, how many were already decided, and every line it could not
+   place or whose fields do not fit, with the line number. Fix those until it says
+   `all good`.
+6. Tell the person to open the project and press **review**.
 
 You may rewrite the proposals file at any time, for example after a better model. What
-the person already accepted or rejected is never offered again. Proposals for documents
-already marked done are still offered; filter them out yourself if that matters.
+the person already accepted or rejected is never offered again. Matching is on the
+document, the tag and the exact span, so a corrected span is offered as a new proposal.
+Proposals for documents already marked done are still offered; filter them out yourself
+if that matters. `export` merges the file too, so proposals show in `annotations.jsonl`
+(as `proposed`) even before anyone opens the project.
 
 ### Pre-annotating page images
 
@@ -143,14 +187,17 @@ npm run sectioner -- export <project>
   Boxes are in `regions[].bbox_pixels` (image pixels) and `bbox` (0–1000 grid), in reading
   order. `role` is the base, and `tag` the project's tag id where it differs.
 
-To measure a model against the person, compare your proposals with `annotations.jsonl`.
-Each proposal ends up `accepted` or `rejected` under its `p…` id, or still `proposed` if
-not yet reviewed.
+To measure a model against the person, join your proposals to `annotations.jsonl` on
+`doc_id`, `tag`, `start` and `end`, using the line's `origin` (your `layer`). Each one
+is `accepted`, `rejected`, or still `proposed`. Don't join on `ann_id`: a proposal's `p…`
+id is numbered when the project loads and stays fixed only after the first save. The
+person's own spans have `origin: "gold"`; they are what the model missed.
 
 ### Checking progress
 
-`npm run sectioner -- status`. A page or document counts as done only when the person
-marked it done.
+`npm run sectioner -- status`. A page or document counts as **done** only when the person
+marked it done. **In progress** means it has work but is not done. **Flagged** (newspaper
+pages) means the annotator flagged the page for a second look (`F`, with a note).
 
 ### Sharing with a team
 
@@ -161,8 +208,11 @@ guard, and the last save wins. `SECTIONER_READONLY=1` gives a look-only instance
 
 ## Checking your work
 
-- `npm run sectioner -- validate`: configuration and files.
-- With the app running: `GET /api/projects` (the projects as the app resolves them, tag
+- `npm run sectioner -- validate`: configuration, files and proposals. It needs no
+  server.
+- `npm run sectioner -- export <project>`: the merged annotations as the app will show
+  them. It also needs no server.
+- Only with the app running (`npm run dev`): `GET /api/projects` (the projects as the app resolves them, tag
   defaults filled), `GET /api/worksets` (every working set with its pages and their
   status), `GET /text/api/annotations?project=<id>` (a text project's annotations, plus
   `errors` for proposals that could not be placed). These are read-only.

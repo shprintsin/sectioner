@@ -80,9 +80,13 @@ data/
   _archive/                        a copy of the configuration before every change
 ```
 
+`add-images` and `add-texts` do not copy your material: a working set points at the
+folder where it is. To keep everything together, put the material inside the data folder
+(for example `data/material/`) before adding it; it is then recorded by a relative path.
+
 `data/` is not part of this repository. To share annotation work with a team, make the
 data folder a git repository of its own, or put it on a shared drive, and start the app
-with `SECTIONER_DATA=/path/to/it npm run dev`.
+with `SECTIONER_DATA=/path/to/it npm run dev`. Give each person their own working sets.
 
 ## Working in the app
 
@@ -105,8 +109,8 @@ keyboard layout.
 ## Machine proposals
 
 A model or an AI agent can pre-annotate, and a person then reviews. For texts, write a
-JSONL file beside the documents and name it in the working set (`"proposal":
-"proposals.jsonl"`), or pass `--proposals` to `add-texts`:
+JSONL file beside the documents and attach it with `npm run sectioner -- attach-proposals
+<working set> proposals.jsonl` (or `--proposals` when running `add-texts`):
 
 ```json
 {"doc": "letter-001", "tag": "place", "quote": "Vilna", "confidence": 0.97}

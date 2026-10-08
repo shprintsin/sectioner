@@ -50,7 +50,7 @@
           "attrs": [{ "id": "quantity", "kind": "number", "label": "quantity", "tei": "@quantity" },
                     { "id": "unit", "kind": "text", "label": "unit", "tei": "@unit" }] },
         { "id": "doctype", "label": "Letter type", "base": "classCode", "scope": "document",
-          "attrs": [{ "id": "value", "kind": "enum", "label": "type", "tei": "@scheme", "values": ["order", "reply", "personal", "other"] }] }
+          "attrs": [{ "id": "value", "kind": "enum", "label": "type", "tei": "@subtype", "values": ["order", "reply", "personal", "other"] }] }
       ],
       "keymap": {}
     }

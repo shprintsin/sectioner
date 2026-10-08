@@ -13,9 +13,13 @@ Both are UTF-8 JSON without a BOM. JSON Schemas for editors and agents are in `s
 there as an error.
 
 Before every change the app and the CLI copy the previous file to
-`_archive/<file>.<date>.<sha>.json`. The app only **appends** to `worksets.json`; it never
-edits or removes an entry. Do the same by hand: add new entries, and set `"hidden": true`
-on an old one instead of deleting it.
+`_archive/<file>.<date>.<sha>.json`. Before editing by hand, copy it yourself to
+`_archive/<file>.<YYYY-MM-DD>.json`.
+
+Sessions and outputs are filed under the ids, so never rename an id or delete an entry
+that has work; set `"hidden": true` instead. The app only appends to `worksets.json`. The
+CLI also appends, and its `attach-proposals` sets one entry's `files.proposal`; those are
+the only changes a working set needs.
 
 ## The three kinds
 
@@ -177,10 +181,23 @@ never carried over.
 
 **Text keys.** The text workbench reads a tag key only when it is a single letter or
 digit (`P`, `7`). A tag with any other chord, or none, is reached from the palette
-(`Space`) or the selection menu. With text selected, a tag key always tags. With nothing
-selected, these letters are commands: `c` compact view, `d` mark done, `n`/`p` next and
-previous document, `u` uncertain, `y`/`n` accept or reject the active proposal. So
-prefer other letters for tags you will use without a selection.
+(`Space`) or the selection menu.
+
+With text selected, a tag key always tags. With nothing selected, these letters are
+commands:
+
+- `c` compact view;
+- `d` mark the document done;
+- `p` previous document;
+- `u` flag the active annotation uncertain;
+- `y` accept the active proposal;
+- `n` reject the active proposal when one is active, otherwise go to the next document.
+
+A tag on one of these letters therefore works only with a selection, which is how spans
+are tagged anyway.
+
+`add-texts --tags` gives each tag the first free letter of its label. `add-images --tags`
+gives `1`…`9` in order.
 
 ### Chords and the key map
 

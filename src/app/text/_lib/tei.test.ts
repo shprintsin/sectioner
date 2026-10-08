@@ -34,6 +34,9 @@ function ann(over: Partial<Ann>): Ann {
   };
 }
 
+/** The paragraph separator, written once (it is two newlines). */
+const BR = "\n\n";
+
 function section(text: string, doc = "d1"): Section {
   return { doc_id: doc, part: "p", title: "t", segs: [text], text, seeds: [] };
 }
@@ -135,9 +138,9 @@ describe("standoff export", () => {
     expect(xml).toMatch(/from="#char\d+" to="#char\d+"/);
   });
 
-  it("includes the full source text once per section, so the offsets resolve", () => {
+  it("includes the full source text once per section, one <p> per paragraph, so the offsets resolve", () => {
     for (const sec of INPUT.sections) {
-      expect(xml, sec.doc_id).toContain(escapeXml(sec.text));
+      expect(xml, sec.doc_id).toContain("<p>" + sec.segs.map(escapeXml).join(`</p>${BR}<p>`) + "</p>");
     }
   });
 
@@ -199,8 +202,9 @@ describe("inline export", () => {
     const { xml } = exportInline(INPUT);
     for (const sec of INPUT.sections) {
       const start = xml.indexOf(`xml:id="${sec.doc_id}"`);
-      const body = xml.slice(xml.indexOf("<p>", start) + 3, xml.indexOf("</p>", start));
+      const body = xml.slice(xml.indexOf("<body>", start) + 6, xml.indexOf("</body>", start));
       const text = body
+        .replace(/<note [^>]*\/>/g, "")
         .replace(/<[^>]+>/g, "")
         .replace(/&lt;/g, "<")
         .replace(/&gt;/g, ">")
@@ -214,9 +218,23 @@ describe("inline export", () => {
     expect(exportInline(bare([r], [section("abcd")])).xml).not.toContain('xml:id="r"');
   });
 
-  it("puts a document-scope tag on the text element", () => {
+  it("puts a document-scope tag on the text element, and its fields in a note", () => {
     const d = ann({ id: "d", tag: "doctype", start: null, end: null, quote: null });
-    expect(exportInline(bare([d], [section("abcd")])).xml).toContain('ana="#doctype"');
+    const xml = exportInline(bare([d], [section("abcd")])).xml;
+    expect(xml).toContain('ana="#doctype"');
+    expect(xml).toContain('<note type="doctype"');
+  });
+
+  it("opens a new <p> at a paragraph break, except inside an open element", () => {
+    const sec = { ...section(`ab${BR}cd`), segs: ["ab", "cd"] };
+    expect(exportInline(bare([], [sec])).xml).toContain(`<p>ab</p>${BR}<p>cd</p>`);
+    const across = ann({ id: "x", start: 0, end: 6, quote: `ab${BR}cd` });
+    expect(exportInline(bare([across], [sec])).xml).toContain(`ab${BR}cd</`);
+  });
+
+  it("writes a config predicate (seg[@type='ruling']) as an attribute", () => {
+    expect(teiPredicate("seg[@type='ruling']")).toBe(' type="ruling"');
+    expect(teiPredicate('seg type="x"')).toBe(' type="x"');
   });
 
   it("is deterministic — the same annotation is dropped every run", () => {
