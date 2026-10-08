@@ -160,3 +160,7 @@ the configuration and that every file is where the working sets say.
 
 For development, `npm run check` runs lint, the type check and the tests. The app is
 Next.js 15 and React 19, with no database and no network calls.
+
+## License
+
+MIT — see `LICENSE`.

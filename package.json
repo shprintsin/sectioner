@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Local annotation app: label regions on scanned pages and spans in texts (TEI), configured by JSON that people and agents can write.",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "next dev --turbo --hostname 127.0.0.1 --port 3040",
@@ -37,5 +38,7 @@
     "typescript-eslint": "^8.27.0",
     "vitest": "^3.2.7"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
