@@ -97,7 +97,7 @@ export async function newsBundle(w: WorksetDef, page: { id: string; dir?: string
     if (r.level === "line") blocks.get(r.block)?.lines.push(roundBox(r.bbox));
   }
   for (const b of blocks.values()) b.lines.sort((a, c) => a[1] - c[1]);
-  const langs = (proposal?.languages ?? ocr?.languages ?? ["yid"]).filter((l): l is Lang => (LANGS as readonly string[]).includes(l));
+  const langs = (proposal?.languages ?? ocr?.languages ?? ["unknown"]).filter((l): l is Lang => (LANGS as readonly string[]).includes(l));
   const cols = proposal?.column_bounds?.length ? proposal.column_bounds : ocr?.column_bounds?.length ? ocr.column_bounds : [0, layout.width];
   const session = await readJson<NewsAnn>(sessionFile(w, page.id));
   return {
@@ -108,7 +108,7 @@ export async function newsBundle(w: WorksetDef, page: { id: string; dir?: string
     imageUrl: `/api/image?ws=${encodeURIComponent(w.id)}&id=${encodeURIComponent(page.id)}`,
     columnBounds: cols,
     nColumns: proposal?.n_columns ?? ocr?.n_columns ?? Math.max(1, cols.length - 1),
-    languages: langs.length ? langs : ["yid"],
+    languages: langs.length ? langs : ["unknown"],
     blocks: [...blocks.values()].sort((a, b) => a.id - b.id),
     proposal: (proposal?.sections ?? [])
       .filter((s) => (NEWS_TYPES as readonly string[]).includes(s.type))

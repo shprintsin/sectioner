@@ -16,7 +16,7 @@ The page image exactly as the app receives it.
 
 ### `layout.eynollah.json`
 The pre-computed layout: blocks and their lines. **This is the app's input.** Format
-documented in `../02-DATA.md`. Remember that `regions` mixes two levels — filter on
+documented in `docs/newspaper/input.md`. Remember that `regions` mixes two levels — filter on
 `level`, and ignore the `reading_order` field, which is wrong for right-to-left papers.
 
 ### `annotated.expected.json`

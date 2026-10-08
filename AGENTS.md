@@ -46,6 +46,7 @@ Run from the repository folder (`npm install` once).
 npm run sectioner -- init                       create the data folder (optional: add-* does it)
 npm run sectioner -- example                    two small example projects
 npm run sectioner -- add-images <folder> [--project ID] [--name LABEL] [--id ID] [--tags "Label=base,…"]
+npm run sectioner -- add-newspapers <image folder> [--xml PAGE-XML folder] [--project ID] [--name LABEL] [--id ID]
 npm run sectioner -- add-texts <folder|corpus.jsonl> [--project ID] [--name LABEL] [--id ID]
                        [--tags "Label=TEIelement,…"] [--proposals FILE] [--direction rtl|ltr|auto]
 npm run sectioner -- attach-proposals <working set> <file.jsonl>
@@ -95,6 +96,20 @@ first, e.g. `data/material/letters/`, and add it from there.
 `--tags` gives keys `1`…`9` in order. For better keys, colours or icons, edit the tags in
 `projects.json` afterwards (see `docs/configuration.md`; `npm run sectioner -- schema
 book` lists the icons), then validate.
+
+### A newspaper job
+
+The `newspaper` kind starts from a layout: blocks and their printed lines, which the
+annotator groups into articles. Run eynollah (or any tool that writes PAGE-XML) on the
+images first, then:
+
+```bash
+npm run sectioner -- add-newspapers ./scans --xml ./eynollah-out --name "Issue 12"
+```
+
+It converts each `<id>.xml` to `<id>.layout.json` beside the image, writing into the
+image folder, and skips a page that already has one. A page with no layout is left out
+and reported. The kind assumes right-to-left papers (`docs/newspaper/input.md`).
 
 ### A new text job
 

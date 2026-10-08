@@ -4,8 +4,9 @@ A local annotation app for two kinds of material:
 
 - **Images.** Scanned pages. Draw a box around each part of a page, give it a tag (heading,
   body text, stamp, table, …), and put the boxes in reading order. Newspaper pages that
-  come with an automatic layout ([eynollah](https://github.com/qurator-spk/eynollah)) can
-  also be grouped into articles.
+  come with an automatic layout (the PAGE-XML of
+  [eynollah](https://github.com/qurator-spk/eynollah) or a similar tool) can also be
+  grouped into articles: `npm run sectioner -- add-newspapers <folder> --xml <PAGE-XML folder>`.
 - **Texts.** Plain-text documents. Select a passage, give it a tag (person, place, date,
   …), fill in its fields, and review what a model proposed. Annotations are kept as
   standoff JSONL and export to TEI.
@@ -65,7 +66,7 @@ To add a working set to a project that already exists, pass `--project <id>`.
 |---|---|---|
 | **Project** | one annotation job: its kind, its tags (each with a colour and a key), its keyboard shortcuts | `data/projects.json` |
 | **Working set** | a list of pages or documents and where their files are | `data/worksets.json` |
-| **Kind** | what a page is: `book` (boxes on any page image), `newspaper` (eynollah blocks grouped into articles), `text` (spans in text) | set once per project |
+| **Kind** | what a page is: `book` (boxes on any page image), `newspaper` (layout blocks grouped into articles), `text` (spans in text) | set once per project |
 
 Everything lives in the **data folder**: `./data` by default, or wherever `SECTIONER_DATA`
 points.
@@ -156,7 +157,7 @@ the configuration and that every file is where the working sets say.
 - `docs/configuration.md`: every field of `projects.json` and `worksets.json`, key syntax,
   command ids.
 - `docs/formats.md`: input and output formats.
-- `docs/newspaper/`: the newspaper kind's input (eynollah) and output contracts.
+- `docs/newspaper/`: the newspaper kind's input (layout from eynollah's PAGE-XML) and output.
 
 For development, `npm run check` runs lint, the type check and the tests. The app is
 Next.js 15 and React 19, with no database and no network calls.

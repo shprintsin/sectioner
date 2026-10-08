@@ -22,6 +22,10 @@ usage: npm run sectioner -- <command> [options]
         --name <label>            the working set's (and new project's) name
         --id <id>                 the working set's (and new project's) id (default: from the name)
         --tags "Label=base,…"     the new project's tags; base is a page role (default figure)
+  add-newspapers <folder>       newspaper pages: images plus eynollah's PAGE-XML (<id>.xml, converted
+                                to <id>.layout.json beside the images) or ready <id>.layout.json files
+        --xml <folder>            where the PAGE-XML files are (default: the image folder)
+        --project <id> --name <label> --id <id> --tags "Label=TYPE,…" (ARTICLE, ADVERTISEMENT, …)
   add-texts <folder|file.jsonl> a folder of .txt files, or one JSONL corpus, becomes a working set
         --project <id> --name <label> --id <id>
         --tags "Label=element,…"  the new project's tags; element is TEI (default seg)
@@ -111,14 +115,14 @@ async function main() {
     return id;
   }
 
-  function parseTags(spec: string | undefined, kind: "book" | "text") {
+  function parseTags(spec: string | undefined, kind: "book" | "newspaper" | "text") {
     if (!spec) return P.defaultTags(kind);
     const taken: string[] = [];
     const keys = new Set<string>();
     // Images: 1…9 in order (letters are the page's own commands). Texts: the first free
     // letter of the label, since the workbench reads one character per tag.
     const keyFor = (label: string, i: number) => {
-      if (kind === "book") return i < 9 ? String(i + 1) : "";
+      if (kind !== "text") return i < 9 ? String(i + 1) : "";
       const k = [...label.toUpperCase()].find((c) => /[A-Z]/.test(c) && !keys.has(c));
       if (k) keys.add(k);
       return k ?? "";
@@ -126,7 +130,7 @@ async function main() {
     const lib = P.tagLibrary(kind);
     return spec.split(",").map((s) => s.trim()).filter(Boolean).map((part, i) => {
       const [label, base0] = part.split("=").map((x) => x.trim());
-      const base = base0 || (kind === "book" ? "figure" : "seg");
+      const base = base0 || (kind === "book" ? "figure" : kind === "newspaper" ? "ARTICLE" : "seg");
       const id = P.slugTag(label, taken);
       taken.push(id);
       // The library's icon and colour for the same base, so a Person looks like one.
@@ -136,7 +140,7 @@ async function main() {
   }
 
   /** Attach a working set to a project: an existing one, or a new one made here. */
-  async function attach(wsId: string, kind: "book" | "text", label: string) {
+  async function attach(wsId: string, kind: "book" | "newspaper" | "text", label: string) {
     const projects = await PS.readProjects();
     if (a.opt.project) {
       const p = projects.find((x) => x.id === a.opt.project);
@@ -186,6 +190,39 @@ async function main() {
       await NW.addWorkset({ id, label, kind: "book", root: rootFor(folder), files: { image: `{id}${ext}` } });
       const project = await attach(id, "book", label);
       console.log(`working set ${id}: ${files.length - bad.length} pages · project ${project}\nopen ${url(`?ws=${id}`)}`);
+      return;
+    }
+
+    case "add-newspapers": {
+      const folder = a.pos[0] ? resolve(a.pos[0]) : die("add-newspapers needs a folder of page images");
+      if (!(await stat(folder).catch(() => null))?.isDirectory()) die(`not a folder: ${folder}`);
+      const xmlDir = a.opt.xml ? resolve(a.opt.xml) : folder;
+      await init(true);
+      const names = await readdir(folder);
+      const images = names.filter((n) => /\.(png|jpe?g)$/i.test(n));
+      if (!images.length) die(`no .png or .jpg files in ${folder}`);
+      const ext = extname(images[0]);
+      const ids = images.filter((n) => extname(n) === ext).map((n) => n.slice(0, -ext.length)).filter((id) => W.SAFE_ID.test(id));
+      const X = await import("../src/app/_lib/news/pageXml");
+      const xmlNames = new Set(await readdir(xmlDir).catch(() => [] as string[]));
+      let converted = 0, have = 0;
+      const missing: string[] = [];
+      for (const id of ids) {
+        const json = join(folder, `${id}.layout.json`);
+        if (await stat(json).catch(() => null)) { have++; continue; }
+        if (!xmlNames.has(`${id}.xml`)) { missing.push(id); continue; }
+        const layout = X.pageXmlToLayout((await store.readIfPresent(join(xmlDir, `${id}.xml`)))!, id);
+        await store.writeUtf8(json, JSON.stringify(layout, null, 1) + "\n");
+        converted++;
+      }
+      if (missing.length) console.warn(`note: ${missing.length} page(s) have no layout (${missing.slice(0, 3).join(", ")}…): no ${missing[0]}.xml in ${xmlDir} and no ${missing[0]}.layout.json`);
+      if (!converted && !have) die("no page has a layout: run eynollah on the images first (its PAGE-XML output, one <id>.xml per image), and pass --xml <folder> if the XML is elsewhere");
+      if (converted) console.log(`converted ${converted} PAGE-XML file(s) to <id>.layout.json beside the images`);
+      const label = a.opt.name ?? basename(folder);
+      const id = await freeWorksetId(label);
+      await NW.addWorkset({ id, label, kind: "newspaper", root: rootFor(folder), files: { image: `{id}${ext}`, layout: "{id}.layout.json" } });
+      const project = await attach(id, "newspaper", label);
+      console.log(`working set ${id}: ${converted + have} pages · project ${project}\nopen ${url(`?ws=${id}`)}`);
       return;
     }
 

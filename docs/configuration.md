@@ -26,7 +26,7 @@ the only changes a working set needs.
 | kind | a page / document is | the annotator | the result |
 |---|---|---|---|
 | `book` | a page image (`.png`, `.jpg`), optionally with a detector's boxes | draws boxes, tags them, puts them in reading order, can group them into units | one JSON per page in `output/<working set>/` when the page is marked done |
-| `newspaper` | a page image and its eynollah layout JSON | groups the layout's blocks into articles, advertisements and the rest; orders them | one JSON per page (`docs/newspaper/output.md`) |
+| `newspaper` | a page image and its layout (blocks and lines; from eynollah or any PAGE-XML tool, converted by `add-newspapers`). Right-to-left papers. | groups the layout's blocks into articles, advertisements and the rest; orders them | one JSON per page (`docs/newspaper/output.md`) |
 | `text` | a plain-text document | tags spans of text, fills their fields, reviews machine proposals | `output/<working set>/annotations.jsonl`, saved after every action |
 
 `book` is the general image kind: despite the name, any scanned page works (letters,
@@ -77,7 +77,7 @@ outside `[A-Za-z0-9_.-]` is skipped.
 | key | kinds | required | what |
 |---|---|---|---|
 | `image` | book, newspaper | yes | the page image, PNG or JPEG |
-| `layout` | newspaper | yes | eynollah layout JSON (`docs/newspaper/input-eynollah.md`) |
+| `layout` | newspaper | yes | the layout JSON (`docs/newspaper/input.md`); `add-newspapers` makes it from eynollah's PAGE-XML |
 | `proposal` | book, newspaper, text | no | machine proposals. book/newspaper: one JSON per page. text: **one JSONL for the whole set** (no `{id}`), see `docs/formats.md`. |
 | `ocr` | newspaper | no | Page-schema JSON whose blocks carry OCR text |
 | `existing` | book | no | an existing annotation (the output format) to re-review |

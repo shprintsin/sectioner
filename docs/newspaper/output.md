@@ -1,13 +1,13 @@
-# 03 — What the app must write
+# Newspaper pages: what the app writes
 
 One JSON file per page, named `<page_id>.json`. **This is a contract**: existing scoring
 code, viewers and training scripts read this shape already, so the app must match it
 rather than invent a variant.
 
-- **Authority:** `schema/schema.py` — Pydantic. The `Field(description=...)` strings are
+- **Authority:** `schema.py` (beside this file) — Pydantic. The `Field(description=...)` strings are
   the actual rules; read them, they are not decoration.
-- **Machine-readable:** `schema/page.schema.json`, generated from it.
-- **Worked example:** `examples/*/annotated.expected.json` — three complete, correct files.
+- **Machine-readable:** `page.schema.json`, generated from it.
+- **Worked example:** `fixtures/newspaper-brief/*/annotated.expected.json` — three complete, correct files.
 
 Encoding is **UTF-8 always**, everywhere, without exception. The content is Hebrew and
 Yiddish.
@@ -58,7 +58,7 @@ Field by field:
 | field | rule |
 |---|---|
 | `section_id` | unique on the page. `s1`, `s2`, … is fine |
-| `type` | one of nine values — see `schema/section_types.md` |
+| `type` | one of nine values — see `section_types.md` |
 | `title` | the headline **as printed**. Normally copied from the OCR of the block that holds it, not typed |
 | `body_text` | member blocks' text joined in reading order. Derived, not typed |
 | `block_ids` | **in reading order** — headline first, then the body in the order a reader follows it. For a right-to-left paper that means down the rightmost column first, then the column to its left |
@@ -94,7 +94,7 @@ The blocks as used, carrying a back-reference to the section they ended up in.
   full list in `schema.py`. It describes what a block *does inside its section*.
   Distinct from the section's `type`, and less important than it: **if the section type
   and grouping are right and the roles are approximate, the page is still valuable.**
-- `source` — `layout` if it came straight from eynollah, `op` if it was produced by a
+- `source` — `layout` if it came straight from the layout file, `op` if it was produced by a
   repair (a split or a merge), `added` if the annotator drew it. This is how we later
   measure how often the layout model needed fixing, so it must be recorded honestly.
 - `ocr_conf` — OCR confidence where known. Useful for showing the annotator which text to
@@ -117,8 +117,6 @@ measure whether the tool is actually getting faster, and this is the measurement
 ## Two schemas, and which one this is
 
 `schema.py` also defines `PageAnnotation`, a narrower shape carrying **no coordinates** —
-that is what a language model returns, referencing block ids only. The app does not
-produce it. It is included as `schema/page_annotation.schema.json` for context, because
-it explains why the repair operations are shaped the way they are (`04-OPERATIONS.md`).
+what a language model returns, referencing block ids only. The app does not produce it.
 
 **The app reads and writes `Page`.**

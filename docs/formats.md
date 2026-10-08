@@ -207,7 +207,7 @@ into `export/<project>/<working set>.jsonl`, one record per line.
 
 ## Images: `newspaper`
 
-Input: the page image and the eynollah layout JSON (`docs/newspaper/input-eynollah.md`),
+Input: the page image and the layout JSON, converted from eynollah's PAGE-XML by `add-newspapers` (`docs/newspaper/input.md`),
 optionally an OCR file and a proposal. Output: a `Page` record per page, sections with
 their blocks in reading order (`docs/newspaper/output.md`, `docs/newspaper/page.schema.json`,
 types in `docs/newspaper/section_types.md`). `fixtures/newspaper-brief/` has three real

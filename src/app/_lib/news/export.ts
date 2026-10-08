@@ -136,7 +136,7 @@ export function columnSpan(ann: NewsAnn, ids: readonly number[], cols: readonly 
 }
 
 export function buildPage(ann: NewsAnn, bundle: NewsBundle, now: Date = new Date()): Page {
-  const lang: Lang = bundle.languages[0] ?? "yid";
+  const lang: Lang = bundle.languages[0] ?? "unknown";
   const m = assignMap(ann);
   const order = orderOf(ann, bundle.columnBounds, bundle.width);
   const sections: PageSection[] = ann.sections
